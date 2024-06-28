@@ -1,24 +1,37 @@
-# README
+# Coffee Recorder
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+### サイトテーマ
+好みのコーヒーに出会える、コーヒーの味わい記録サイト
+​
+### テーマを選んだ理由
+コーヒーは種類によって大きく味わいが異なります。味わいの違いを楽しむことも楽しみの一つであり、自分の好みに合致するコーヒーに出会ったときの喜びも、楽しみのまた一つです。
 
-Things you may want to cover:
+写真や箇条書きだけではなく、コーヒーに特化した記録の土台を用意することで、記録することがより楽しくなり、かつ好みのコーヒーを見つけやすくなる、そんな工夫が施された記録サイトがあればいいなと思いました。
 
-* Ruby version
+また、コーヒー製造者・販売者の方々が、こだわり厳選したコーヒーを、味わいからプロモーションできる集合サイトを作りたいと思いました。
 
-* System dependencies
+### ターゲットユーザ
+ - 日常的にさまざまな種類のコーヒーを飲む人
+ - コーヒーを生産・販売している人
 
-* Configuration
+### 主な利用シーン
+ - コーヒーに特化したレビュー記録で、簡単かつ厳密に、出会ったコーヒーの味わいを記録したいとき
+ - 自分の好みに合った味わいのコーヒーに出会いたい時
+ - 販売しているコーヒーの味わいを紹介したい時
+ 
+​
+## 設計書
+ - [WBS](https://docs.google.com/spreadsheets/d/1mUq62uucFnk2j1IizpIAWRgNV6emCQBtfY3bOpqIbs8/edit?usp=sharing)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+他、後ほど掲載予定
+​
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
+​
+## 使用素材
+外部サービスの画像素材・音声素材を使用した場合は、サービス名とURLを明記予定
