@@ -8,6 +8,18 @@ Rails.application.routes.draw do
     registrations: 'consumer/registrations',
     sessions: 'consumer/sessions'
   }
+  
+  scope "(:locale)" do
+    
+    namespace :seller do
+      
+    end
+    
+    scope module: :customer do
+      
+    end
+    
+  end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
