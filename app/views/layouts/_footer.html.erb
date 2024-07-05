@@ -1,0 +1,24 @@
+<ul class='d-flex justify-content-around mb-0'>
+  
+  <% if user_signed_in? || maker_signed_in? %>
+    <li>
+      <%= link_to I18n.t('logout') do %>
+        <i class="fa-solid fa-right-from-bracket"></i>
+      <% end %>
+    </li>
+  <% end %>
+  
+  <li>
+    <% if I18n.locale.to_s == "en" %>
+      <%= link_to :locale => 'ja' do %>
+        <i class="fa-solid fa-language"></i>
+      <% end %>
+    <% else %>
+      <%= link_to :locale => 'en' do %>
+        <i class="fa-solid fa-language"></i>
+      <% end %>
+    <% end %>
+  </li>
+  
+</ul>
+

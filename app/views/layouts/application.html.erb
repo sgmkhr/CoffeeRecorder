@@ -13,12 +13,18 @@
 
   <body>
     
-    <% if I18n.locale.to_s == "en" %>
-      <%= link_to '日本語', :locale => 'ja' %>
-    <% else %>
-      <%= link_to 'English', :locale => 'en' %>
-    <% end %>
+    <header>
+      <nav class='d-none d-md-block'><%= render 'layouts/header' %></nav>
+    </header>
+    
+    <p class='text-success'><%= flash[:notice] %></p>
+    <p class='text-danger' ><%= flash[:alert] %></p>
     
     <%= yield %>
+    
+    <footer>
+      <nav class='d-md-none'><%= render 'layouts/footer' %></nav>
+    </footer>
+    
   </body>
 </html>
