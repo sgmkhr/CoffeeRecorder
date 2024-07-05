@@ -1,6 +1,16 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
 
 en:
+  activerecord:
+    attributes:
+      user:
+        email: Email
+        password: password
+        password_confirmation: password(confirmation)
+        remember_me: Remember login
+    models:
+      user: User
+      maker: Maker
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

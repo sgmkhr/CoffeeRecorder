@@ -20,7 +20,9 @@
     <p class='text-success'><%= flash[:notice] %></p>
     <p class='text-danger' ><%= flash[:alert] %></p>
     
-    <%= yield %>
+    <body>
+      <%= yield %>
+    </body>
     
     <footer>
       <nav class='d-md-none'><%= render 'layouts/footer' %></nav>
