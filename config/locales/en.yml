@@ -31,3 +31,23 @@
 
 en:
   hello: "Hello world"
+  btn:
+    update: Update
+  seller:
+    makers:
+      update:
+        notice: The information has been updated.
+        alert: Update failed.
+      destroy:
+        notice: Your account has been deleted.
+        btn: Delete the account
+        confirmation: Are you sure you want to delete all the data from your account?
+  consumer:
+    users:
+      update:
+        notice: The information has been updated.
+        alert: Update failed.
+      destroy:
+        notice: Your account has been deleted.
+        btn: Delete the account
+        confirmation: Are you sure you want to delete all the data from your account?

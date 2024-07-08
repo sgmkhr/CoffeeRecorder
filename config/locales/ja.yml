@@ -1,4 +1,25 @@
 ja:
+  btn:
+    update: 更新
+  seller:
+    makers:
+      update:
+        notice: 登録情報を更新しました。
+        alert: 登録情報の更新に失敗しました。
+      destroy:
+        notice: アカウントを削除しました。
+        btn: アカウントを削除する
+        confirmation: 本当にアカウントを削除しますか？データも全て削除されます。
+  consumer:
+    users:
+      update:
+        notice: 登録情報を更新しました。
+        alert: 登録情報の更新に失敗しました。
+      destroy:
+        notice: アカウントを削除しました。
+        btn: アカウントを削除する
+        confirmation: 本当にアカウントを削除しますか？データも全て削除されます。
+
   activerecord:
     errors:
       messages:
@@ -16,7 +37,7 @@ ja:
     - 金
     - 土
     abbr_month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月
@@ -42,7 +63,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
     month_names:
-    - 
+    -
     - 1月
     - 2月
     - 3月

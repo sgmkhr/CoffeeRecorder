@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= form_with model: @maker, maker_registration_path, id: 'new_user', class: 'new_user' do |f| %>
+<%= form_with model: @maker, url: maker_registration_path, id: 'new_user', class: 'new_user' do |f| %>
   <%= render "seller/shared/error_messages", resource: resource %>
   
   <div class="field">

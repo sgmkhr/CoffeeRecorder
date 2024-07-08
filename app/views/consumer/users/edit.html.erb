@@ -1,0 +1,14 @@
+<%= render "layouts/errors", obj: @user %>
+<%= form_with model: @user do |f| %>
+  <div class='"form-group row justify-content-center'>
+    <%= f.label :email, autofocus: true, class: "col-4" %>
+    <%= f.email_field :email, class: "col-8 form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit I18n.t("btn.update"), class: "btn btn-sm" %>
+  </div>
+<% end %>
+
+<%= link_to I18n.t("consumer.users.destroy.btn"), user_path(@user.id), method: :delete,
+    class: "mt-3", "data-confirmation" => I18n.t("consumer.users.destroy.confirmation") %>
