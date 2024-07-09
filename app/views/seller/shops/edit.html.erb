@@ -1,2 +1,30 @@
-<h1>Seller::Shops#edit</h1>
-<p>Find me in app/views/seller/shops/edit.html.erb</p>
+<div class="text-center">
+  <%= I18n.t("seller.shops.edit.title") %>
+</div>
+
+<div class="errors">
+  <%= render "layouts/errors", obj: @shop %>
+</div>
+<%= form_with model: @shop do |f| %>
+  <div class="form-group row justify-content-center">
+    <%= f.label :name, class: "col-md-3 col-12" %>
+    <%= f.text_field :name, class: "form-control col-md-7" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :address, class: "col-md-3 col-12" %>
+    <%= f.text_field :address, class: "form-control col-md-7" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :introduction, class: "col-md-3 col-12" %>
+    <%= f.text_area :introduction, class: "form-control col-md-7" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :website, class: "col-md-3 col-12" %>
+    <%= f.text_field :website, class: "form-control col-md-7" %>
+  </div>
+  <div class="actions row">
+    <div class="col-md-10 text-right">
+      <%= f.submit I18n.t("btn.update"), class: "btn btn-sm" %>
+    </div>
+  </div>
+<% end %>

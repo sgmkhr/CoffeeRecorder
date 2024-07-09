@@ -8,6 +8,10 @@ en:
         password: password
         password_confirmation: password(confirmation)
         remember_me: Remember login
+      maker:
+        email: Email
+        password: password
+        company_name: company name
     models:
       user: User
       maker: Maker

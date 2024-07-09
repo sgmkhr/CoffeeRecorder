@@ -33,6 +33,7 @@ en:
   hello: "Hello world"
   btn:
     update: Update
+    create: Create
   seller:
     makers:
       update:
@@ -46,11 +47,14 @@ en:
       create:
         notice: The new shop has been created.
         alert: Creation failed.
+        placeholder: New shop's name
       update:
         notice: The shop's information has been updated.
         alert: Update failed.
       destroy:
         notice: The shop has been deleted.
+      index:
+        section_title: Company shops list
   consumer:
     users:
       update:
@@ -69,3 +73,24 @@ en:
         alert: Update failed.
       destroy:
         notice: The record has been deleted.
+  activerecord:
+    models:
+      record: record
+      shop: shop
+    attributes:
+      record:
+        coffee_name: coffee name
+        shop_name: shop name
+        scene: scene
+        brewing: brewing
+        sweetness: sweetness
+        acidity: acidity
+        bitterness: bitterness
+        strength: strength
+        aftertaste: aftertaste
+        impression: impression
+      shop:
+        name: shop name
+        address: address
+        introduction: introduction
+        website: website

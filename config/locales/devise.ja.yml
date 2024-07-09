@@ -6,6 +6,10 @@ ja:
         password: パスワード
         password_confirmation: パスワード（確認用）
         remember_me: ログインを記憶する
+      maker:
+        email: Eメール
+        password: パスワード
+        company_name: 会社名
     models:
       user: ユーザー
       maker: 生産者・販売者

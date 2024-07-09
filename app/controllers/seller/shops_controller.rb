@@ -2,6 +2,7 @@ class Seller::ShopsController < ApplicationController
   before_action :authenticate_maker!
 
   def index
+    @shop = Shop.new
     @shops = current_maker.shops
   end
   
@@ -17,7 +18,8 @@ class Seller::ShopsController < ApplicationController
 
   def show
     @shop = Shop.find(params[:id])
-    @coffees = @shop.coffee_posts.page(params[:page])
+    @coffees = @shop.coffee_posts.page(params[:coffee_page])
+    @informations = @shop.information_posts.page(params[:information_page])
   end
 
   def edit
