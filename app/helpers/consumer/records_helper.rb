@@ -1,0 +1,2 @@
+module Consumer::RecordsHelper
+end

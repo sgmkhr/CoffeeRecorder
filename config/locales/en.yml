@@ -42,6 +42,15 @@ en:
         notice: Your account has been deleted.
         btn: Delete the account
         confirmation: Are you sure you want to delete all the data from your account?
+    shops:
+      create:
+        notice: The new shop has been created.
+        alert: Creation failed.
+      update:
+        notice: The shop's information has been updated.
+        alert: Update failed.
+      destroy:
+        notice: The shop has been deleted.
   consumer:
     users:
       update:
@@ -51,3 +60,12 @@ en:
         notice: Your account has been deleted.
         btn: Delete the account
         confirmation: Are you sure you want to delete all the data from your account?
+    records:
+      create:
+        notice: The new record has been created.
+        alert: Creation failed.
+      update:
+        notice: The record's information has been updated.
+        alert: Update failed.
+      destroy:
+        notice: The record has been deleted.

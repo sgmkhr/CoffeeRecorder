@@ -10,6 +10,15 @@ ja:
         notice: アカウントを削除しました。
         btn: アカウントを削除する
         confirmation: 本当にアカウントを削除しますか？データも全て削除されます。
+    shops:
+      create:
+        notice: 新しい店舗を作成しました。
+        alert: 新しい店舗の作成に失敗しました。
+      update:
+        notice: 店舗情報を更新しました。
+        alert: 店舗情報の更新に失敗しました。
+      destroy:
+        notice: 店舗を削除しました。
   consumer:
     users:
       update:
@@ -19,6 +28,15 @@ ja:
         notice: アカウントを削除しました。
         btn: アカウントを削除する
         confirmation: 本当にアカウントを削除しますか？データも全て削除されます。
+    records:
+      create:
+        notice: 新しい記録を作成しました。
+        alert: 新しい記録の作成に失敗しました。
+      update:
+        notice: 記録情報を更新しました。
+        alert: 記録情報の更新に失敗しました。
+      destroy:
+        notice: 記録を削除しました。
 
   activerecord:
     errors:
