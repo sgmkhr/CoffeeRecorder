@@ -41,6 +41,8 @@ ja:
         alert: 記録情報の更新に失敗しました。
       destroy:
         notice: 記録を削除しました。
+      index:
+        no_exist: 記録はありません。
 
   activerecord:
     models:
@@ -63,6 +65,61 @@ ja:
         address: 所在地
         introduction: 紹介
         website: ウェブサイト
+
+  enums:
+    record:
+      scene:
+        unspecified_scene: 未設定
+        at_shop: 店内で
+        takeout: テイクアウト
+        at_home: 自宅で
+        outdoor: 屋外で
+        other_scene: その他
+      brewing:
+        unspecified_brewing:
+        paper_drip:
+        flannel_drip:
+        french_press:
+        aero_press:
+        siphon:
+        water_drip:
+        espresso_machine:
+        other_brewing:
+      sweetness:
+        unspecified_sweetness:
+        very_sweet:
+        sweet:
+        little_sweet:
+        less_sweet:
+        not_sweet:
+      acidity:
+        unspecified_acidity:
+        very_sour:
+        sour:
+        little_sour:
+        less_sour:
+        not_sour:
+      bitterness:
+        unspecified_bitterness:
+        very_bitter:
+        bitter:
+        little_bitter:
+        less_bitter:
+        not_bitter:
+      strength:
+        unspecified_strength:
+        high:
+        little_high:
+        strength_balanced:
+        little_low:
+        low:
+      aftertaste:
+        unspecified_aftertaste:
+        sharp:
+        richness:
+        clean:
+        mellow:
+        aftertaste_balanced:
 
     errors:
       messages:

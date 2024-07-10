@@ -60,10 +60,29 @@ nav ul {
   height: 80px;
 }
 
+#tab-menu li {
+  color: #8b4513;
+}
+
+#tab-menu li .active {
+  color: #eee8aa;
+}
+
+.record-card {
+  width:  30%;
+  background-color: #fdf5e6;
+  box-shadow:       2px 2px 3px #808080;
+  border:           1px solid rgb(81, 78, 77);
+  border-radius:    5px;
+}
+
 @media screen and (max-width: 767px) {
   body {
     width:         90%;
     margin-top:    0;
     margin:        0 auto 80px;
+  }
+  .record-card {
+    width:  50%;
   }
 }

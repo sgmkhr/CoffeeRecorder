@@ -1,0 +1,45 @@
+<%= form_with model: record do |f| %>
+  <div class="form-group row justify-content-center">
+    <%= f.label :coffee_name, class: "col-md-3 col-12" %>
+    <%= f.text_field :coffee_name, class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :shop_name, class: "col-md-3 col-12" %>
+    <%= f.text_field :shop_name, class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :scene, class: "col-md-3 col-12" %>
+    <%= f.select :scene, options_for_select(Record.scenes.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :brewing, class: "col-md-3 col-12" %>
+    <%= f.select :brewing, options_for_select(Record.brewings.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :sweetness, class: "col-md-3 col-12" %>
+    <%= f.select :sweetness, options_for_select(Record.sweetnesses.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :acidity, class: "col-md-3 col-12" %>
+    <%= f.select :acidity, options_for_select(Record.acisities.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :bitterness, class: "col-md-3 col-12" %>
+    <%= f.select :bitterness, options_for_select(Record.bitternesses.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :strength, class: "col-md-3 col-12" %>
+    <%= f.select :strength, options_for_select(Record.strengths.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :aftertaste, class: "col-md-3 col-12" %>
+    <%= f.select :aftertaste, options_for_select(Record.aftertastes.keys_i18n), class: "col-md-5 form-control" %>
+  </div>
+  <div class="form-group row justify-content-center">
+    <%= f.label :impression, class: "col-md-3 col-12" %>
+    <%= f.text_area :impression, class: "col-md-5 form-control" %>
+  </div>
+  <div class="actions">
+    <%= f.submit I18n.t("btn.create"), class: "btn btn-sm" %>
+  </div>
+<% end %>

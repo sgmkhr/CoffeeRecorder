@@ -73,6 +73,8 @@ en:
         alert: Update failed.
       destroy:
         notice: The record has been deleted.
+      index:
+        no_exist: "No record exists yet."
   activerecord:
     models:
       record: record
@@ -94,3 +96,58 @@ en:
         address: address
         introduction: introduction
         website: website
+        
+  enums:
+    record:
+      scene:
+        unspecified_scene:
+        at_shop:
+        takeout:
+        at_home:
+        outdoor:
+        other_scene:
+      brewing:
+        unspecified_brewing:
+        paper_drip:
+        flannel_drip:
+        french_press:
+        aero_press:
+        siphon:
+        water_drip:
+        espresso_machine:
+        other_brewing:
+      sweetness:
+        unspecified_sweetness:
+        very_sweet:
+        sweet:
+        little_sweet:
+        less_sweet:
+        not_sweet:
+      acidity:
+        unspecified_acidity: 
+        very_sour: 
+        sour: 
+        little_sour: 
+        less_sour: 
+        not_sour:
+      bitterness:
+        unspecified_bitterness: 
+        very_bitter: 
+        bitter: 
+        little_bitter: 
+        less_bitter: 
+        not_bitter:
+      strength:
+        unspecified_strength: 
+        high: 
+        little_high: 
+        strength_balanced: 
+        little_low: 
+        low:
+      aftertaste:
+        unspecified_aftertaste: 
+        sharp: 
+        richness: 
+        clean: 
+        mellow: 
+        aftertaste_balanced:
