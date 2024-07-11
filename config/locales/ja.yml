@@ -76,50 +76,50 @@ ja:
         outdoor: 屋外で
         other_scene: その他
       brewing:
-        unspecified_brewing:
-        paper_drip:
-        flannel_drip:
-        french_press:
-        aero_press:
-        siphon:
-        water_drip:
-        espresso_machine:
-        other_brewing:
+        unspecified_brewing: 未設定
+        paper_drip: ペーパードリップ
+        flannel_drip: ネルドリップ
+        french_press: フレンチプレス
+        aero_press: エアロプレス
+        siphon: サイフォン
+        water_drip: ウォータードリップ
+        espresso_machine: エスプレッソマシン
+        other_brewing: その他
       sweetness:
-        unspecified_sweetness:
-        very_sweet:
-        sweet:
-        little_sweet:
-        less_sweet:
-        not_sweet:
+        unspecified_sweetness: 未設定
+        very_sweet: とても甘い
+        sweet: 甘い
+        little_sweet: 少し甘い
+        less_sweet: あまり甘くない
+        not_sweet: 甘味はない
       acidity:
-        unspecified_acidity:
-        very_sour:
-        sour:
-        little_sour:
-        less_sour:
-        not_sour:
+        unspecified_acidity: 未設定
+        very_sour: とても酸っぱい
+        sour: 酸っぱい
+        little_sour: 少し酸っぱい
+        less_sour: あまり酸っぱくない
+        not_sour: 酸味はない
       bitterness:
-        unspecified_bitterness:
-        very_bitter:
-        bitter:
-        little_bitter:
-        less_bitter:
-        not_bitter:
+        unspecified_bitterness: 未設定
+        very_bitter: とても苦い
+        bitter: 苦い
+        little_bitter: 少し苦い
+        less_bitter: あまり苦くない
+        not_bitter: 苦味はない
       strength:
-        unspecified_strength:
-        high:
-        little_high:
-        strength_balanced:
-        little_low:
-        low:
+        unspecified_strength: 未設定
+        high: とても濃厚
+        little_high: 少し濃厚
+        strength_balanced: ちょうどいい
+        little_low: 少し薄い
+        low: 薄い
       aftertaste:
-        unspecified_aftertaste:
-        sharp:
-        richness:
-        clean:
-        mellow:
-        aftertaste_balanced:
+        unspecified_aftertaste: 未設定
+        sharp: キレ
+        richness: コク
+        clean: スッキリ
+        mellow: まろやか
+        aftertaste_balanced: バランス
 
     errors:
       messages:
