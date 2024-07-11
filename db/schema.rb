@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_09_072301) do
+ActiveRecord::Schema.define(version: 2024_07_11_101310) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,34 @@ ActiveRecord::Schema.define(version: 2024_07_09_072301) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "coffee_posts", force: :cascade do |t|
+    t.integer "shop_id", null: false
+    t.string "name", null: false
+    t.text "introduction", null: false
+    t.boolean "online_sale", default: false, null: false
+    t.integer "brewing", default: 0, null: false
+    t.integer "roasting", default: 0, null: false
+    t.integer "grind_size", default: 0, null: false
+    t.integer "sweetness", default: 0, null: false
+    t.integer "acidity", default: 0, null: false
+    t.integer "bitterness", default: 0, null: false
+    t.integer "strength", default: 0, null: false
+    t.integer "aftertaste", default: 0, null: false
+    t.text "supplement"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_coffee_posts_on_shop_id"
+  end
+
+  create_table "information_posts", force: :cascade do |t|
+    t.integer "shop_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_information_posts_on_shop_id"
   end
 
   create_table "makers", force: :cascade do |t|
@@ -95,6 +123,8 @@ ActiveRecord::Schema.define(version: 2024_07_09_072301) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "coffee_posts", "shops"
+  add_foreign_key "information_posts", "shops"
   add_foreign_key "records", "users"
   add_foreign_key "shops", "makers"
 end

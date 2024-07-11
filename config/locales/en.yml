@@ -96,7 +96,7 @@ en:
         address: address
         introduction: introduction
         website: website
-        
+
   enums:
     record:
       scene:
@@ -116,6 +116,72 @@ en:
         water_drip: water drip
         espresso_machine: espresso machine
         other_brewing: other
+      sweetness:
+        unspecified_sweetness: unspecified
+        very_sweet: very sweet
+        sweet: sweet
+        little_sweet: little sweet
+        less_sweet: less sweet
+        not_sweet: not sweet
+      acidity:
+        unspecified_acidity: unspecified
+        very_sour: very sour
+        sour: sour
+        little_sour: little sour
+        less_sour: less sour
+        not_sour: not sour
+      bitterness:
+        unspecified_bitterness: unspecified
+        very_bitter: very bitter
+        bitter: bitter
+        little_bitter: little bitter
+        less_bitter: less bitter
+        not_bitter: not bitter
+      strength:
+        unspecified_strength: unspecified
+        high: ligh
+        little_high: little high
+        strength_balanced: balanced
+        little_low: little low
+        low: low
+      aftertaste:
+        unspecified_aftertaste: unspecified
+        sharp: sharp
+        richness: richness
+        clean: clean
+        mellow: mellow
+        aftertaste_balanced: balanced
+    coffe_post:
+      brewing:
+        unspecified_brewing: unspecified
+        paper_drip: paper drip
+        flannel_drip: flannel drip
+        french_press: french press
+        aero_press: aero press
+        siphon: siphon
+        water_drip: water drip
+        espresso_machine: espresso machine
+        other_brewing: other
+      roasting:
+        unspecified_roasting: unspecified
+        light_roast: light roast
+        cinnamon_roast: cinnamon roast
+        medium_roast: medium roast
+        high_roast: high roast
+        city_roast: city roast
+        fullcity_roast: fullcity roast
+        french_roast: french roast
+        italian_roast: italian roast
+        other: other
+      grind_size:
+        unspecified_grind_size: unspecified
+        coarse: coarse
+        medium_coarse: medium coarse
+        medium: medium
+        medium_fine: medium fine
+        fine: fine
+        turkish: turkish
+        other: other
       sweetness:
         unspecified_sweetness: unspecified
         very_sweet: very sweet

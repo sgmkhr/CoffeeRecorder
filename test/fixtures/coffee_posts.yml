@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shop: one
+  name: MyString
+  introduction: MyText
+  online_sale: false
+  brewing: 1
+  roasting: 1
+  grind_size: 1
+  sweetness: 1
+  acidity: 1
+  bitterness: 1
+  strength: 1
+  aftertaste: 1
+  supplement: MyText
+
+two:
+  shop: two
+  name: MyString
+  introduction: MyText
+  online_sale: false
+  brewing: 1
+  roasting: 1
+  grind_size: 1
+  sweetness: 1
+  acidity: 1
+  bitterness: 1
+  strength: 1
+  aftertaste: 1
+  supplement: MyText
