@@ -55,6 +55,28 @@ en:
         notice: The shop has been deleted.
       index:
         section_title: Company shops list
+    coffee_posts:
+      create:
+        notice: The new coffee has been created.
+        alert: Creation failed.
+      update:
+        notice: The coffee information has been updated.
+        alert: Update failed.
+      destroy:
+        notice: The coffee has been deleted.
+      reject:
+        alert: You cannot edit other shops' data.
+    information_posts:
+      create:
+        notice: The new information post has been created.
+        alert: Creation failed.
+      update:
+        notice: The information post has been updated.
+        alert: Update failed.
+      destroy:
+        notice: The information post has been deleted.
+      reject:
+        alert: You cannot edit other shops' data.
   consumer:
     users:
       update:

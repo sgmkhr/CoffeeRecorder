@@ -1,6 +1,5 @@
 class Consumer::HomesController < ApplicationController
   before_action :authenticate_user!
-  
   def top
     @record = Record.new
     @records = current_user.records.page(params[:page])

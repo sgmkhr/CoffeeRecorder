@@ -23,6 +23,28 @@ ja:
         notice: 店舗を削除しました。
       index:
         section_title: 自社店舗一覧
+    coffee_posts:
+      create:
+        notice: 新しいコーヒーを作成しました。
+        alert: 新しいコーヒーの作成に失敗しました。
+      update:
+        notice: コーヒー情報を更新しました。
+        alert: コーヒー情報の更新に失敗しました。
+      destroy:
+        notice: コーヒーを削除しました。
+      reject:
+        alert: 他店舗のコーヒーデータは扱えません。
+    information_posts:
+      create:
+        notice: 新しいお知らせを作成しました。
+        alert: 新しいお知らせの作成に失敗しました。
+      update:
+        notice: お知らせ情報を更新しました。
+        alert: お知らせ情報の更新に失敗しました。
+      destroy:
+        notice: お知らせを削除しました。
+      reject:
+        alert: 他店舗のお知らせデータは扱えません。
   consumer:
     users:
       update:

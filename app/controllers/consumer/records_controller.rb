@@ -1,6 +1,5 @@
 class Consumer::RecordsController < ApplicationController
   before_action :authenticate_user!
-
   def create
     @record = current_user.records.new(record_params)
     if @record.save

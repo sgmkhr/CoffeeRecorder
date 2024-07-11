@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  namespace :consumer do
-    get 'shops/index'
-    get 'shops/show'
-  end
   scope "(:locale)" do
     devise_for :makers, skip: [:passwords], controllers: {
       registrations: 'seller/registrations',
@@ -16,7 +12,10 @@ Rails.application.routes.draw do
     namespace :seller do
       get "information/edit", to: "makers#edit", as: "edit_maker"
       resources :makers, only: [:update, :destroy]
-      resources :shops, only: [:index, :create, :show, :edit, :update, :destroy]
+      resources :shops, only: [:index, :create, :show, :edit, :update, :destroy] do
+        resources :coffee_posts, except: [:index]
+        resources :information_posts, except: [:index]
+      end
     end
 
     scope module: :consumer do
@@ -25,7 +24,10 @@ Rails.application.routes.draw do
       resources :users, only: [:update, :destroy] do
         resources :records, only: [:create, :show, :edit, :update, :destroy]
       end
-      resources :shops, only: [:index, :show]
+      resources :shops, only: [:index, :show] do
+        resources :coffee_posts, only: [:index, :show]
+        resources :information_posts, only: [:show]
+      end
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

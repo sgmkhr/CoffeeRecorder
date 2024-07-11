@@ -1,0 +1,2 @@
+module Consumer::CoffeePostsHelper
+end

@@ -1,6 +1,5 @@
 class Seller::ShopsController < ApplicationController
   before_action :authenticate_maker!
-
   def index
     @shop = Shop.new
     @shops = current_maker.shops

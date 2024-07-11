@@ -1,0 +1,2 @@
+module Seller::CoffeePostsHelper
+end

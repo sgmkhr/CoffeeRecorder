@@ -1,6 +1,5 @@
 class Seller::MakersController < ApplicationController
   before_action :authenticate_maker
-
   def edit
     @maker = current_maker
   end
