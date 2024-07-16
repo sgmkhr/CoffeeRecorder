@@ -34,7 +34,11 @@ en:
   btn:
     update: Update
     create: Create
+    guest_login: login as guest user
   seller:
+    guest_login:
+      notice: You logged in as a guest user of sellers.
+      alert: A guest user cannot operate this function. You need to log in or sign up.
     makers:
       update:
         notice: The information has been updated.
@@ -78,6 +82,9 @@ en:
       reject:
         alert: You cannot edit other shops' data.
   consumer:
+    guest_login:
+      notice: You logged in as a guest user of consumers.
+      alert: A guest user cannot operate this function. You need to log in or sign up.
     users:
       update:
         notice: The information has been updated.

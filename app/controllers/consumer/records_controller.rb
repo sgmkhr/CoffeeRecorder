@@ -1,5 +1,6 @@
 class Consumer::RecordsController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_guest_user, only[:create, :update, :destroy]
   def create
     @record = current_user.records.new(record_params)
     if @record.save

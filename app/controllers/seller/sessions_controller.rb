@@ -21,6 +21,12 @@ class Seller::SessionsController < Devise::SessionsController
   def after_sign_out_path_for(resource)
     new_maker_session_path
   end
+  
+  def guest_sign_in
+    maker = Maker.guest
+    sign_in maker
+    redirect_to seller_shops_path, notice: I18n.t("seller.guest_login.notice")
+  end
 
   # protected
 

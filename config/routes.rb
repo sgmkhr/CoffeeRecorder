@@ -9,6 +9,14 @@ Rails.application.routes.draw do
       sessions: 'consumer/sessions'
     }
 
+    devise_scope :maker do
+      post "makers/guest_sign_in", to: "seller/sessions#guest_sign_in"
+    end
+
+    devise_scope :user do
+      post "users/guest_sign_in", to: "consumer/sessions#guest_sign_in"
+    end
+
     namespace :seller do
       get "information/edit", to: "makers#edit", as: "edit_maker"
       resources :makers, only: [:update, :destroy]
@@ -25,9 +33,10 @@ Rails.application.routes.draw do
         resources :records, only: [:create, :show, :edit, :update, :destroy]
       end
       resources :shops, only: [:index, :show] do
-        resources :coffee_posts, only: [:index, :show]
+        resources :coffee_posts, only: [:show]
         resources :information_posts, only: [:show]
       end
+      resources :coffee_posts, only: [:index]
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

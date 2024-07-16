@@ -1,5 +1,6 @@
 class Consumer::UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :ensure_guest_user
   def edit
     @user = current_user
   end

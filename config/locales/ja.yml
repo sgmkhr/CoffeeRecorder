@@ -2,7 +2,11 @@ ja:
   btn:
     update: 更新
     create: 作成
+    guest_login: ゲストユーザーとしてログイン
   seller:
+    guest_login:
+      notice: 販売者ゲストユーザーとしてログインしました
+      alert: ゲストユーザーは制限されている操作です
     makers:
       update:
         notice: 登録情報を更新しました。
@@ -46,6 +50,9 @@ ja:
       reject:
         alert: 他店舗のお知らせデータは扱えません。
   consumer:
+    guest_login:
+      notice: 消費者ゲストユーザーとしてログインしました
+      alert: ゲストユーザーは制限されている操作です
     users:
       update:
         notice: 登録情報を更新しました。

@@ -1,5 +1,6 @@
 class Seller::InformationPostsController < ApplicationController
   before_action :authenticate_maker!
+  before_action :ensure_guest_maker, only[:create, :update, :destroy]
   before_action :ensure_correct_maker_and_set_shop
   def new
     @information = InformationPost.new
