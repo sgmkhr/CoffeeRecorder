@@ -129,7 +129,7 @@ en:
   enums:
     record:
       scene:
-        unspecified_scene: unspecified
+        no_scene: unspecified
         at_shop: at shop
         takeout: takeout
         at_home: at home
@@ -180,6 +180,14 @@ en:
         clean: clean
         mellow: mellow
         aftertaste_balanced: balanced
+      rate:
+        unspecified_rate: unspecified
+        excellent: excellent
+        very_good: very good
+        good: good
+        average_rate: average
+        poor: poor
+        unacceptable: unacceptable
     coffe_post:
       brewing:
         unspecified_brewing: unspecified

@@ -1,0 +1,9 @@
+<% if I18n.locale.to_s == "en" %>
+  <%= link_to :locale => 'ja' do %>
+    <i class="fa-solid fa-language"></i>
+  <% end %>
+<% else %>
+  <%= link_to :locale => 'en' do %>
+    <i class="fa-solid fa-language"></i>
+  <% end %>
+<% end %>

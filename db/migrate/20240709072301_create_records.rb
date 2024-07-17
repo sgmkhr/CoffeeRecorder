@@ -12,6 +12,7 @@ class CreateRecords < ActiveRecord::Migration[6.1]
       t.integer :strength, null: false, default: 0
       t.integer :aftertaste, null: false, default: 0
       t.text :impression
+      t.integer :rate, null: false, default: 0
 
       t.timestamps
     end

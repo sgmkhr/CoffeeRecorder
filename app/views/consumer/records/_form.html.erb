@@ -1,45 +1,49 @@
-<%= form_with model: record do |f| %>
-  <div class="form-group row justify-content-center">
-    <%= f.label :coffee_name, class: "col-md-3 col-12" %>
-    <%= f.text_field :coffee_name, class: "col-md-5 form-control" %>
+<%= form_with model: record, url: user_records_path(current_user.id), method: :post do |f| %>
+  <div class="row justify-content-center">
+    <div class="col-md-10 form-group row">
+      <%= f.label :coffee_name, class: "col-md-4 col-12" %>
+      <%= f.text_field :coffee_name, class: "col-md-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :shop_name, class: "col-md-4 col-12" %>
+      <%= f.text_field :shop_name, class: "col-md-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :scene, class: "col-4" %>
+      <%= f.select :scene, Record.scenes.keys.map {|k| [I18n.t("enums.record.scene.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :brewing, class: "col-4" %>
+      <%= f.select :brewing, Record.brewings.keys.map {|k| [I18n.t("enums.record.brewing.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :sweetness, class: "col-4" %>
+      <%= f.select :sweetness, Record.sweetnesses.keys.map {|k| [I18n.t("enums.record.sweetness.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :acidity, class: "col-4" %>
+      <%= f.select :acidity, Record.acidities.keys.map {|k| [I18n.t("enums.record.acidity.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :bitterness, class: "col-4" %>
+      <%= f.select :bitterness, Record.bitternesses.keys.map {|k| [I18n.t("enums.record.bitterness.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :strength, class: "col-4" %>
+      <%= f.select :strength, Record.strengths.keys.map {|k| [I18n.t("enums.record.strength.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :aftertaste, class: "col-4" %>
+      <%= f.select :aftertaste, Record.aftertastes.keys.map {|k| [I18n.t("enums.record.aftertaste.#{k}"), k]}, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :impression, class: "col-md-4 col-12" %>
+      <%= f.text_area :impression, class: "col-md-8 form-control" %>
+    </div>
   </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :shop_name, class: "col-md-3 col-12" %>
-    <%= f.text_field :shop_name, class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :scene, class: "col-md-3 col-12" %>
-    <%= f.select :scene, options_for_select(Record.scenes.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :brewing, class: "col-md-3 col-12" %>
-    <%= f.select :brewing, options_for_select(Record.brewings.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :sweetness, class: "col-md-3 col-12" %>
-    <%= f.select :sweetness, options_for_select(Record.sweetnesses.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :acidity, class: "col-md-3 col-12" %>
-    <%= f.select :acidity, options_for_select(Record.acisities.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :bitterness, class: "col-md-3 col-12" %>
-    <%= f.select :bitterness, options_for_select(Record.bitternesses.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :strength, class: "col-md-3 col-12" %>
-    <%= f.select :strength, options_for_select(Record.strengths.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :aftertaste, class: "col-md-3 col-12" %>
-    <%= f.select :aftertaste, options_for_select(Record.aftertastes.keys_i18n), class: "col-md-5 form-control" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :impression, class: "col-md-3 col-12" %>
-    <%= f.text_area :impression, class: "col-md-5 form-control" %>
-  </div>
-  <div class="actions">
-    <%= f.submit I18n.t("btn.create"), class: "btn btn-sm" %>
+  <div class="row">
+    <div class="actions col-md-10 text-right">
+      <%= f.submit I18n.t("btn.create"), class: "btn btn-sm" %>
+    </div>
   </div>
 <% end %>

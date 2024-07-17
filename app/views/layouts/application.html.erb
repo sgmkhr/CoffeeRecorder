@@ -17,6 +17,10 @@
       <nav class='d-none d-md-block'><%= render 'layouts/header' %></nav>
     </header>
     
+    <span id="language-switch-btn">
+      <%= render "layouts/language_switch_btn" %>
+    </span>
+    
     <p class='text-success'><%= flash[:notice] %></p>
     <p class='text-danger' ><%= flash[:alert] %></p>
     

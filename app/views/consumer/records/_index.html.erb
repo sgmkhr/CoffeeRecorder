@@ -1,20 +1,24 @@
 <div class="d-flex justify-content-center">
-  <%= records.each do |record| %>
-    <div class="record-card">
-      <p class="overflow-hidden text-nowrap text-truncate">
-        <i class="fa-solid fa-tablets"></i><%= record.coffee_name %>
-      </p>
-      <p class="overflow-hidden text-nowrap text-truncate">
-        <i class="fa-solid fa-store"></i><%= record.shop_name %>
-      </p>
-      <p><%= I18n.t("activerecord.attributes.record.scene") %>:<%= record.scene_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.record.brewing") %>:<%= record.brewing_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.record.sweetness") %>:<%= record.sweetness_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.record.acidity") %>:<%= record.acidity_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.record.bitterness") %>:<%= record.bitterness_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.record.strength") %>:<%= record.strength_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.record.aftertaste") %>:<%= record.aftertaste_i18n %></p>
-    </div>
+  <% if records.any? %>
+    <%= records.each do |record| %>
+      <div class="record-card">
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <i class="fa-solid fa-tablets"></i><%= record.coffee_name %>
+        </p>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <i class="fa-solid fa-store"></i><%= record.shop_name %>
+        </p>
+        <p><%= I18n.t("activerecord.attributes.record.scene") %>:<%= record.scene_i18n %></p>
+        <p><%= I18n.t("activerecord.attributes.record.brewing") %>:<%= record.brewing_i18n %></p>
+        <p><%= I18n.t("activerecord.attributes.record.sweetness") %>:<%= record.sweetness_i18n %></p>
+        <p><%= I18n.t("activerecord.attributes.record.acidity") %>:<%= record.acidity_i18n %></p>
+        <p><%= I18n.t("activerecord.attributes.record.bitterness") %>:<%= record.bitterness_i18n %></p>
+        <p><%= I18n.t("activerecord.attributes.record.strength") %>:<%= record.strength_i18n %></p>
+        <p><%= I18n.t("activerecord.attributes.record.aftertaste") %>:<%= record.aftertaste_i18n %></p>
+      </div>
+    <% end %>
+  <% else %>
+    <span><%= I18n.t("consumer.records.index.no_exist") %></span>
   <% end %>
 </div>
 <div class="text-center">

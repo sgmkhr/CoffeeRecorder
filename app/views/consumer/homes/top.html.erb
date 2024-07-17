@@ -1,19 +1,19 @@
-<ul id="tab-menu" class='d-flex justify-content-center'>
+<ul id="tab-menu" class='d-flex justify-content-around list-unstyled'>
   <li><a href="#main_tab" class="main_tab"><i class="fa-solid fa-tablets"></i></a></li>
   <li><a href="#new_record_tab" class="new_record_tab"><i class="fa-solid fa-tablets"></i></a></li>
   <li><a href="#index_tab" class="index_tab"><i class="fa-solid fa-tablets"></i></a></li>
 </ul>
 
-  
+
 <div id="tab-contents">
   <div id="main_tab" class="tab">
-    <!--後ほど実装予定-->
+    メイン<!--後ほど実装予定-->
   </div>
-  
-  <div id="new_record_tab" class="tab">
+
+  <div id="new_record_tab" class="tab py-5">
     <%= render "consumer/records/form", record: @record %>
   </div>
-  
+
   <div id="index_tab" class="tab">
     <%= render "consumer/records/index", records: @records %>
   </div>
@@ -21,8 +21,13 @@
 
 <script>
   $("#tab-contents .tab").hide();
-  $(".<%= @current_tab %>").addClass("active");
-  $($(".<%= @current_tab %>").attr("href")).show();
+  <% if @current_tab %>
+    $(".<%= @current_tab %>").addClass("active");
+    $($(".<%= @current_tab %>").attr("href")).show();
+  <% else %>
+    $(".main_tab").addClass("active");
+    $($(".main_tab").attr("href")).show();
+  <% end %>
   event.preventDefault();
 </script>
 <%= javascript_pack_tag "tabs" %>

@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2024_07_11_101310) do
     t.integer "strength", default: 0, null: false
     t.integer "aftertaste", default: 0, null: false
     t.text "impression"
+    t.integer "rate", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_records_on_user_id"
