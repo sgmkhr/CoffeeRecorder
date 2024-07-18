@@ -13,7 +13,17 @@
 
 <div id="tab-contents" class="main-container">
   <div id="main_tab" class="tab">
-    メイン<!--後ほど実装予定-->
+    <div>
+      preference data chart
+      <p><%= current_user.records.count.to_s + I18n.t("consumer.records.index.count") %></p>
+    </div>
+    <div>
+      <%= render "consumer/coffee_posts/index", coffees: @coffees, param_name: "coffee_posts_page", tab_name: "main_tab" %>
+    </div>
+    <%= link_to coffee_posts_path do %>
+      <i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-mug-saucer"></i>
+      <%= I18n.t("consumer.coffee_posts.index.link") %>
+    <% end %>
   </div>
 
   <div id="new_record_tab" class="tab">
@@ -21,7 +31,7 @@
   </div>
 
   <div id="index_tab" class="tab">
-    <%= render "consumer/records/index", records: @records %>
+    <%= render "consumer/records/index", records: @records, tab_name: "index_tab" %>
   </div>
 </div>
 

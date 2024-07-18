@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-around flex-wrap">
+  <% if coffees.any? %>
+    <% coffees.each do |coffee| %>
+      <%= link_to coffee_path(coffee.id), class:"index-card" do %>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <i class="fa-solid fa-tablets"></i> <%= coffee.name %>
+        </p>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <i class="fa-solid fa-store"></i> <%= coffee.shop.name %>
+        </p>
+        <div>
+          <p><%= coffee.introduction %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<div class="text-center">
+  <% if coffees.any? %>
+    <%= paginate coffees, theme: "bootstrap-5", :param_name => param_name, params: { current_tab: tab_name } %>
+  <% else %>
+    <%= I18n.t("consumer.coffee_posts.index.no_exist") %>
+  <% end %>
+</div>

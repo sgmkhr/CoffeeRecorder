@@ -34,7 +34,7 @@ en:
   btn:
     update: Update
     create: Create
-    edit: 
+    edit: Edit
     guest_login: login as guest user
   seller:
     guest_login:
@@ -95,6 +95,8 @@ en:
         btn: Delete the account
         confirmation: Are you sure you want to delete all the data from your account?
     records:
+      top:
+        count: ": past records count analysed from"
       create:
         notice: The new record has been created.
         alert: Creation failed.
@@ -110,6 +112,10 @@ en:
         title: Record details
       edit:
         title: Record editing page
+    coffee_posts:
+      index:
+        link: Go to find coffee
+        title: Coffee list
 
   activerecord:
     models:

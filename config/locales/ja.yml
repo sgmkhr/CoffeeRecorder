@@ -63,6 +63,8 @@ ja:
         btn: アカウントを削除する
         confirmation: 本当にアカウントを削除しますか？データも全て削除されます。
     records:
+      top:
+        count: 件の過去の記録データから分析
       create:
         notice: 新しい記録を作成しました。
         alert: 新しい記録の作成に失敗しました。
@@ -78,6 +80,10 @@ ja:
         title: 記録詳細
       edit:
         title: 記録内容編集
+    coffee_posts:
+      index:
+        link: コーヒーを探しに行く
+        title: コーヒー一覧
 
   activerecord:
     models:

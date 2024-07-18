@@ -1,26 +1,22 @@
 <div class="d-flex justify-content-around flex-wrap">
   <% if records.any? %>
     <% records.each do |record| %>
-      <%= link_to user_record_path(current_user.id, record.id), class:"record-card" do %>
-        <!--<div class="record-card">-->
-          <p class="overflow-hidden text-nowrap text-truncate">
-            <i class="fa-solid fa-tablets"></i> <%= record.coffee_name %>
-          </p>
-          <p class="overflow-hidden text-nowrap text-truncate">
-            <i class="fa-solid fa-store"></i> <%= record.shop_name %>
-          </p>
-          <p><%= I18n.t("activerecord.attributes.record.rate") %>：<%= record.rate_i18n %></p>
-          <p><%= record.created_at.strftime("%Y/%m/%d") %></p>
-        <!--</div>-->
+      <%= link_to user_record_path(current_user.id, record.id), class:"index-card" do %>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <i class="fa-solid fa-tablets"></i> <%= record.coffee_name %>
+        </p>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <i class="fa-solid fa-store"></i> <%= record.shop_name %>
+        </p>
+        <p><%= I18n.t("activerecord.attributes.record.rate") %>：<%= record.rate_i18n %></p>
+        <p><%= record.created_at.strftime("%Y/%m/%d") %></p>
       <% end %>
     <% end %>
-  <% else %>
-    <span><%= I18n.t("consumer.records.index.no_exist") %></span>
   <% end %>
 </div>
 <div class="text-center">
-  <% if records %>
-    <%= paginate records, method: "bootstrap-5" %>
+  <% if records.any? %>
+    <%= paginate records, theme: "bootstrap-5", params: { current_tab: tab_name } %>
   <% else %>
     <%= I18n.t("consumer.records.index.no_exist") %>
   <% end %>
