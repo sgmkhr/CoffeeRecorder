@@ -1,2 +1,9 @@
-<h1>Consumer::Records#edit</h1>
-<p>Find me in app/views/consumer/records/edit.html.erb</p>
+<div class="link-navi">
+  <%= link_to I18n.t("consumer.records.index.title"), root_path(current_tab: "index_tab") %><span> ＞</span>
+  <%= link_to I18n.t("consumer.records.show.title"), user_record_path(current_user.id, @record.id) %><span> ＞</span>
+  <%= I18n.t("consumer.records.edit.title") %>
+</div>
+
+<div class="main-container">
+  <%= render "consumer/records/form", record: @record %>
+</div>

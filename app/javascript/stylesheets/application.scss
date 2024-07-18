@@ -89,12 +89,11 @@ nav ul {
 
 #tab-menu li:has(.active) {
   color:            rgb(191, 185, 156);
-  background-color: rgb(245, 241, 223);
+  background-color: rgba(245, 241, 223, 0.5);
 }
 
 .main-container {
-  border-radius:    0 0 10px 10px;
-  background-color: rgb(245, 241, 223);
+  background-color: rgba(245, 241, 223, 0.5);
   min-height:       200px;
   padding:          50px 20px;
 }
@@ -116,8 +115,13 @@ nav ul {
 @media screen and (max-width: 767px) {
   body {
     width:          90%;
+    padding-top:    30px;
     padding-bottom: 80px;
   }
+  nav li {
+    margin-right: 0;
+  }
+
   .record-card {
     width:  90%;
   }

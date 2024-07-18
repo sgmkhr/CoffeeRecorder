@@ -34,6 +34,7 @@ en:
   btn:
     update: Update
     create: Create
+    edit: 
     guest_login: login as guest user
   seller:
     guest_login:
@@ -103,7 +104,13 @@ en:
       destroy:
         notice: The record has been deleted.
       index:
+        title: Records list
         no_exist: "No record exists yet."
+      show:
+        title: Record details
+      edit:
+        title: Record editing page
+
   activerecord:
     models:
       record: record
@@ -121,6 +128,7 @@ en:
         aftertaste: aftertaste
         impression: impression
         rate: rate
+        record_image: image
       shop:
         name: shop name
         address: address

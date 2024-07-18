@@ -48,6 +48,10 @@
       <%= f.label :rate, class: "col-4" %>
       <%= f.select :rate, Record.rates.keys.map {|k| [I18n.t("enums.record.rate.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :record_image, class: "col-4" %>
+      <%= f.file_field :record_image, accept: "image/*", class: "col-8" %>
+    </div>
   </div>
   <div class="row">
     <div class="actions col-md-10 text-right">

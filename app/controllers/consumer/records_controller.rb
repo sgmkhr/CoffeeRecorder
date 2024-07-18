@@ -41,6 +41,6 @@ class Consumer::RecordsController < ApplicationController
   
   def record_params
     params.require(:record).permit(:coffee_name, :shop_name, :scene, :brewing, :sweetness,
-                                   :acidity, :bitterness, :strength, :aftertaste, :impression)
+                                   :acidity, :bitterness, :strength, :aftertaste, :impression, :rate, :record_image)
   end
 end

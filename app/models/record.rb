@@ -1,6 +1,6 @@
 class Record < ApplicationRecord
   belongs_to :user
-  
+
   has_one_attached :record_image
 
   validates :coffee_name, presence: true, length: { maximum: 50 }
@@ -15,4 +15,12 @@ class Record < ApplicationRecord
   enum strength: { unspecified_strength: 0, high: 1, little_high: 2, strength_balanced: 3, little_low: 4, low: 5 }
   enum aftertaste: { unspecified_aftertaste: 0, sharp: 1, richness: 2, clean: 3, mellow: 4, aftertaste_balanced: 5 }
   enum rate: { unspecified_rate: 0, excellent: 1, very_good: 2, good: 3, average_rate: 4, poor: 5, unacceptable: 6 }
+
+  def get_record_image(width, height)
+    unless record_image.attached?
+      file_path = Rails.root.join('app/assets/images/default-image.jpg')
+      record_image.attach(io: File.open(file_path), filename: 'default-image.jpg', content_type: 'image/jpeg')
+    end
+    record_image.variant(resize_to_limit: [width, height]).processed
+  end
 end

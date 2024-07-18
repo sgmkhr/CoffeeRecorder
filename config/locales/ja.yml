@@ -2,6 +2,7 @@ ja:
   btn:
     update: 更新
     create: 作成
+    edit: 編集
     guest_login: ゲストユーザーとしてログイン
   seller:
     guest_login:
@@ -71,7 +72,12 @@ ja:
       destroy:
         notice: 記録を削除しました。
       index:
+        title: 記録一覧
         no_exist: 記録はありません。
+      show:
+        title: 記録詳細
+      edit:
+        title: 記録内容編集
 
   activerecord:
     models:
@@ -90,6 +96,7 @@ ja:
         aftertaste: 後味
         impression: 印象・感想
         rate: 総評
+        record_image: 画像
       shop:
         name: 店舗名
         address: 所在地
