@@ -1,6 +1,5 @@
 <% if obj.errors.any? %>
-  <%= obj.errors.count.to_s + I18n.t('') %>
-  <ul>
+  <ul class="alert-message">
     <% obj.errors.full_messages.each do |message| %>
       <li class='list-unstyled'><%= message %></li>
     <% end %>

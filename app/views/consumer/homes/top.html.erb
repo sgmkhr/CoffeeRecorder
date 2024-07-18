@@ -1,16 +1,22 @@
-<ul id="tab-menu" class='d-flex justify-content-around list-unstyled'>
-  <li><a href="#main_tab" class="main_tab"><i class="fa-solid fa-tablets"></i></a></li>
-  <li><a href="#new_record_tab" class="new_record_tab"><i class="fa-solid fa-tablets"></i></a></li>
-  <li><a href="#index_tab" class="index_tab"><i class="fa-solid fa-tablets"></i></a></li>
+<ul id="tab-menu" class="d-flex justify-content-between list-unstyled mb-0">
+  <li><a href="#main_tab" class="main_tab">
+    <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-magnifying-glass-chart"></i>
+  </a></li>
+  <li><a href="#new_record_tab" class="new_record_tab">
+    <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-plus"></i>
+  </a></li>
+  <li><a href="#index_tab" class="index_tab">
+    <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-tablets"></i><i class="fa-solid fa-tablets"></i>
+  </a></li>
 </ul>
 
 
-<div id="tab-contents">
+<div id="tab-contents" class="main-container">
   <div id="main_tab" class="tab">
     メイン<!--後ほど実装予定-->
   </div>
 
-  <div id="new_record_tab" class="tab py-5">
+  <div id="new_record_tab" class="tab">
     <%= render "consumer/records/form", record: @record %>
   </div>
 

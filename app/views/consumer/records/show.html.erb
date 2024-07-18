@@ -1,1 +1,16 @@
-
+<div class="main-container">
+  <p class="overflow-hidden text-nowrap text-truncate">
+    <i class="fa-solid fa-tablets"></i><%= record.coffee_name %>
+  </p>
+  <p class="overflow-hidden text-nowrap text-truncate">
+    <i class="fa-solid fa-store"></i><%= record.shop_name %>
+  </p>
+  <p><%= I18n.t("activerecord.attributes.record.scene") %>:<%= record.scene_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.brewing") %>:<%= record.brewing_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.sweetness") %>:<%= record.sweetness_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.acidity") %>:<%= record.acidity_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.bitterness") %>:<%= record.bitterness_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.strength") %>:<%= record.strength_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.aftertaste") %>:<%= record.aftertaste_i18n %></p>
+  <p><%= I18n.t("activerecord.attributes.record.rate") %>:<%= record.rate_i18n %></p>
+</div>

@@ -1,11 +1,11 @@
 class Consumer::RecordsController < ApplicationController
   before_action :authenticate_user!
-  before_action :ensure_guest_user, only[:create, :update, :destroy]
+  before_action :ensure_guest_user, only: [:create, :update, :destroy]
   def create
     @record = current_user.records.new(record_params)
     if @record.save
       @current_tab = "index_tab"
-      redirect_to root_path, notice: I18n.t("consumer.records.create.notice")
+      redirect_to root_path(current_tab: "index_tab"), notice: I18n.t("consumer.records.create.notice")
     else
       @records = current_user.records.page(params[:page])
       @current_tab = "new_record_tab"

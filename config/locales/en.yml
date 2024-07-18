@@ -120,6 +120,7 @@ en:
         strength: strength
         aftertaste: aftertaste
         impression: impression
+        rate: rate
       shop:
         name: shop name
         address: address

@@ -1,5 +1,4 @@
-<ul class='d-flex justify-content-around mb-0'>
-  
+<ul>
   <% if user_signed_in? %>
     <li>
       <%= link_to root_path do %>
@@ -30,5 +29,7 @@
   <% else %>
     <h1>Coffee Recorder</h1>
   <% end %>
-  
+  <li class="ml-auto">
+    <%= render "layouts/language_switch_btn" %>
+  </li>
 </ul>

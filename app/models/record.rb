@@ -14,5 +14,5 @@ class Record < ApplicationRecord
   enum bitterness: { unspecified_bitterness: 0, very_bitter: 1, bitter: 2, little_bitter: 3, less_bitter: 4, not_bitter: 5 }
   enum strength: { unspecified_strength: 0, high: 1, little_high: 2, strength_balanced: 3, little_low: 4, low: 5 }
   enum aftertaste: { unspecified_aftertaste: 0, sharp: 1, richness: 2, clean: 3, mellow: 4, aftertaste_balanced: 5 }
-  enum rates: { unspecified_rate: 0, excellent: 1, very_good: 2, good: 3, average_rate: 4, poor: 5, unacceptable: 6 }
+  enum rate: { unspecified_rate: 0, excellent: 1, very_good: 2, good: 3, average_rate: 4, poor: 5, unacceptable: 6 }
 end

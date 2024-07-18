@@ -9,8 +9,10 @@ class ApplicationController < ActionController::Base
      { :locale => I18n.locale }.merge options
   end
 
+  private
+  
   def ensure_guest_user
-    user = User.find(params[:id])
+    user = params[:id] ? User.find(params[:id]) : User.find(params[:user_id])
     if user.guest_user?
       redirect_to request.referer, alert: I18n.t("consumer.guest_login.alert")
     end
