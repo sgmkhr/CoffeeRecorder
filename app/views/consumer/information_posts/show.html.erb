@@ -1,2 +1,28 @@
-<h1>Consumer::InformationPosts#show</h1>
-<p>Find me in app/views/consumer/information_posts/show.html.erb</p>
+<div class="link-navi">
+  <%= link_to I18n.t("consumer.homes.title"), root_path %><span> ＞</span>
+  <%= link_to I18n.t("consumer.shops.index.title"), shops_path %><span> ＞</span>
+  <%= link_to I18n.t("consumer.shops.show.title"), shop_path(@information.shop_id) %><span> ＞</span>
+  <%= I18n.t("consumer.information_posts.show.title") %>
+</div>
+
+<div class="main-container">
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <%= image_tag @information.get_information_image(300, 300) %>
+      </div>
+    </div>
+    <div class="col-md-6 mt-md-3">
+      <p class="overflow-hidden text-nowrap text-truncate">
+        <i class="fa-solid fa-tablets"></i><%= @information.title %>
+      </p>
+      <p class="overflow-hidden text-nowrap text-truncate">
+        <i class="fa-solid fa-store"></i><%= @information.shop.name %>
+      </p>
+      <p>
+        <%= @information.body %>
+      </p>
+    </div>
+  </div>
+</div>
+

@@ -1,2 +1,28 @@
-<h1>Consumer::Shops#index</h1>
-<p>Find me in app/views/consumer/shops/index.html.erb</p>
+<div class="link-navi">
+  <%= link_to I18n.t("consumer.homes.title"), root_path %><span> ＞</span>
+  <%= I18n.t("consumer.shops.index.title") %>
+</div>
+
+<div class="main-container">
+  <% if @shops.any %>
+    <% @shops.each do |shop| %>
+      <div class="shop-card">
+        <div class="shop-image">
+          <%= image_tag shop.get_shop_image(300, 300) %>
+        </div>
+        <p>
+          <i class="fa-solid fa-store"></i>
+          <%= shop.name %>
+        </p>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <%= shop.address %>
+        </p>
+      </div>
+    <% end %>
+    <p class="text-center">
+      <%= paginate @shops, theme: "bootstrap-5" %>
+    </p>
+  <% else %>
+    <p class="text-center"><%= I18n.t("consumer.shops.index.no_exists")</p>
+  <% end %>
+</div>

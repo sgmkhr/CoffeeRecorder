@@ -98,7 +98,7 @@ nav ul {
   padding:          50px 20px;
 }
 
-.index-card {
+.index-card, .shop-card {
   width:            30%;
   background-color: rgb(248, 244, 230);
   box-shadow:       2px 2px 3px #808080;
@@ -108,8 +108,16 @@ nav ul {
   margin-bottom:    30px;
 }
 
-.record-card:hover {
+.index-card:hover, .shop-card:hover {
   background-color: rgb(233, 228, 212);
+}
+
+#information_posts_tab {
+  display: none;
+}
+
+#tab-menu-in-shop li:has(.active) {
+  color: rgb(191, 185, 156);
 }
 
 @media screen and (max-width: 767px) {
@@ -122,7 +130,7 @@ nav ul {
     margin-right: 0;
   }
 
-  .record-card {
+  .index-card {
     width:  90%;
   }
   #language-switch-btn {

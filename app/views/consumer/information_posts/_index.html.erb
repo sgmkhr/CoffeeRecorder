@@ -1,0 +1,24 @@
+<div class="d-flex justify-content-around flex-wrap">
+  <% if informations.any? %>
+    <% informations.each do |information| %>
+      <%= link_to shop_information_path(information.shop_id, information.id), class:"index-card" do %>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <%= information.title %>
+        </p>
+        <p class="overflow-hidden text-nowrap text-truncate">
+          <%= information.body %>
+        </p>
+        <div class="overflow-hidden text-truncate">
+          <p><%= information.introduction %></p>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<div class="text-center">
+  <% if informations.any? %>
+    <%= paginate informations, theme: "bootstrap-5", :param_name => param_name %>
+  <% else %>
+    <%= I18n.t("consumer.information_posts.index.no_exist") %>
+  <% end %>
+</div>
