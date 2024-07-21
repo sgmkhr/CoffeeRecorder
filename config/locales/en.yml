@@ -35,7 +35,13 @@ en:
     update: Update
     create: Create
     edit: Edit
+    sign_up: Sign up
+    log_in: Log in
     guest_login: login as guest user
+  link:
+    log_in: Log in
+    sign_up: Sign up
+  minimum_password: 6 minimum letters
   seller:
     guest_login:
       notice: You logged in as a guest user of sellers.
@@ -86,14 +92,9 @@ en:
     guest_login:
       notice: You logged in as a guest user of consumers.
       alert: A guest user cannot operate this function. You need to log in or sign up.
+    homes:
+      title: Top page
     users:
-      update:
-        notice: The information has been updated.
-        alert: Update failed.
-      destroy:
-        notice: Your account has been deleted.
-        btn: Delete the account
-        confirmation: Are you sure you want to delete all the data from your account?
     records:
       top:
         count: ": past records count analysed from"
@@ -108,6 +109,7 @@ en:
       index:
         title: Records list
         no_exist: "No record exists yet."
+        count: ": your record's number analysed from"
       show:
         title: Record details
       edit:
@@ -116,11 +118,29 @@ en:
       index:
         link: Go to find coffee
         title: Coffee list
+        no_exist: "No coffee post exists yet."
+      show:
+        title: Coffee details
+        online_sale:
+          true: available
+          false: not available
+    information_posts:
+      index:
+        no_exist: "No information post exists yet."
+      show:
+        title: information details
+    shops:
+      index:
+        title: shops list
+        no_exist: "No shop exists yet."
+      show:
+        title: shop details
 
   activerecord:
     models:
       record: record
       shop: shop
+      coffee_post: Coffee
     attributes:
       record:
         coffee_name: coffee name
@@ -140,6 +160,19 @@ en:
         address: address
         introduction: introduction
         website: website
+      coffee_post:
+        name: product name
+        introduction: introduction
+        online_sale: online sale
+        brewing: brewing
+        roasting: roasting
+        grind_size: grind size
+        sweetness: sweetness
+        acidity: acidity
+        bitterness: bitterness
+        strength: strength
+        aftertaste: aftertaste
+        supplement: supplement
 
   enums:
     record:

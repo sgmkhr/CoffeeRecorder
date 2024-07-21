@@ -3,7 +3,13 @@ ja:
     update: 更新
     create: 作成
     edit: 編集
+    sign_up: 新規登録
+    log_in: ログイン
     guest_login: ゲストユーザーとしてログイン
+  link:
+    log_in: ログイン
+    sign_up: 新規登録
+  minimum_password: 6文字以上
   seller:
     guest_login:
       notice: 販売者ゲストユーザーとしてログインしました
@@ -54,6 +60,8 @@ ja:
     guest_login:
       notice: 消費者ゲストユーザーとしてログインしました
       alert: ゲストユーザーは制限されている操作です
+    homes:
+      title: トップページ
     users:
       update:
         notice: 登録情報を更新しました。
@@ -76,6 +84,7 @@ ja:
       index:
         title: 記録一覧
         no_exist: 記録はありません。
+        count: 件の記録データから分析
       show:
         title: 記録詳細
       edit:
@@ -84,11 +93,29 @@ ja:
       index:
         link: コーヒーを探しに行く
         title: コーヒー一覧
+        no_exist: コーヒー投稿はありません。
+      show:
+        title: コーヒー詳細
+        online_sale:
+          true: 有
+          false: 無
+    information_posts:
+      index:
+        no_exist: お知らせ投稿はありません。
+      show:
+        title: お知らせ詳細
+    shops:
+      index:
+        title: ショップ一覧
+        no_exist: ショップはありません。
+      show:
+        title: ショップ詳細
 
   activerecord:
     models:
       record: 記録
       shop: 店舗
+      coffee_post: コーヒー
     attributes:
       record:
         coffee_name: コーヒー名
@@ -108,6 +135,19 @@ ja:
         address: 所在地
         introduction: 紹介
         website: ウェブサイト
+      coffee_post:
+        name: 商品名
+        introduction: 紹介文
+        online_sale: オンライン販売有無
+        brewing: 淹れ方
+        roasting: 焙煎
+        grind_size: 挽き具合
+        sweetness: 甘味
+        acidity: 酸味
+        bitterness: 苦味
+        strength: 濃度
+        aftertaste: 後味
+        supplement: 補足
 
   enums:
     record:

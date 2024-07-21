@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     end
 
     namespace :seller do
-      get "information/edit", to: "makers#edit", as: "edit_maker"
+      get "(:id)/information/edit", to: "makers#edit", as: "edit_maker"
       resources :makers, only: [:update, :destroy]
       resources :shops, only: [:index, :create, :show, :edit, :update, :destroy] do
         resources :coffee_posts, except: [:index]
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
 
     scope module: :consumer do
       root to: 'homes#top'
-      get "users/information/edit", to: "users#edit", as: "edit_user"
+      get "users/(:id)/information/edit", to: "users#edit", as: "edit_user"
       resources :users, only: [:update, :destroy] do
         resources :records, only: [:create, :show, :edit, :update, :destroy]
       end

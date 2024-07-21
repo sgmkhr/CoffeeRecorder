@@ -20,10 +20,12 @@
     <div>
       <%= render "consumer/coffee_posts/index", coffees: @coffees, param_name: "coffee_posts_page", tab_name: "main_tab" %>
     </div>
-    <%= link_to coffee_posts_path do %>
-      <i class="fa-solid fa-magnifying-glass"></i><i class="fa-solid fa-mug-saucer"></i>
-      <%= I18n.t("consumer.coffee_posts.index.link") %>
-    <% end %>
+    <div class="text-right">
+      <%= link_to coffee_posts_path do %>
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <%= I18n.t("consumer.coffee_posts.index.link") %>
+      <% end %>
+    </div>
   </div>
 
   <div id="new_record_tab" class="tab">
