@@ -9,6 +9,8 @@ ja:
   link:
     log_in: ログイン
     sign_up: 新規登録
+    maker_login: 販売者はこちら
+    user_login: 一般の方はこちら
   minimum_password: 6文字以上
   seller:
     guest_login:
@@ -22,6 +24,8 @@ ja:
         notice: アカウントを削除しました。
         btn: アカウントを削除する
         confirmation: 本当にアカウントを削除しますか？データも全て削除されます。
+      edit:
+        title: 登録情報編集画面
     shops:
       create:
         notice: 新しい店舗を作成しました。
@@ -33,7 +37,9 @@ ja:
       destroy:
         notice: 店舗を削除しました。
       index:
+        title: 販売者トップページ
         section_title: 自社店舗一覧
+        no_exist: 店舗はありません。
     coffee_posts:
       create:
         notice: 新しいコーヒーを作成しました。

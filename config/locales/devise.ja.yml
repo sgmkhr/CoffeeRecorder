@@ -9,6 +9,8 @@ ja:
       maker:
         email: Eメール
         password: パスワード
+        password_confirmation: パスワード（確認用）
+        remember_me: ログインを記憶する
         company_name: 会社名
     models:
       user: ユーザー

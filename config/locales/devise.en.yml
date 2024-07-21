@@ -11,6 +11,8 @@ en:
       maker:
         email: Email
         password: password
+        password_confirmation: password(confirmation)
+        remember_me: Remember login
         company_name: company name
     models:
       user: User

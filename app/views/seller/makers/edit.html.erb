@@ -1,25 +1,28 @@
-<%= render "layouts/errors", obj: @maker %>
-<%= form_with model: @maker do |f| %>
-  <div class="form-group row justify-content-center">
-    <%= f.label :company_name, class: "col-4" %>
-    <%= f.text_field :company_name, autofocus: true, class: "col-8 form-control" %>
+<div class="link-nav">
+  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path %><span> ＞</span>
+  <%= I18n.t("seller.makers.edit.title") %>
+</div>
+<div class="main-container">
+  <div class="errors text-center">
+    <%= render "layouts/errors", obj: @maker %>
   </div>
-
-  <div class='"form-group row justify-content-center'>
-    <%= f.label :email, class: "col-4" %>
-    <%= f.email_field :email, class: "col-8 form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit I18n.t("btn.update"), class: "btn btn-sm" %>
-  </div>
-<% end %>
-
-<%= link_to I18n.t("seller.makers.destroy.btn"), seller_maker_path(@maker.id), method: :delete,
-    class: "mt-3", "data-confirmation" => I18n.t("seller.makers.destroy.confirmation") %>
-
-<div class="navigation">
-  <%= link_to "#" do %> <!--後ほどリンク先設定予定-->
-    <i class="fa-solid fa-chevron-left"></i>
+  <%= form_with model: @maker, url: seller_maker_path(current_maker.id), method: :patch do |f| %>
+    <div class="form-group row justify-content-center">
+      <%= f.label :company_name, class: "col-md-3" %>
+      <%= f.text_field :company_name, autofocus: true, class: "col-md-5 form-control" %>
+    </div>
+  
+    <div class="form-group row justify-content-center">
+      <%= f.label :email, class: "col-md-3" %>
+      <%= f.email_field :email, class: "col-md-5 form-control" %>
+    </div>
+  
+    <div class="actions row justify-content-center">
+      <div class="col-md-8 text-right">
+        <%= f.submit I18n.t("btn.update"), class: "btn btn-sm common-btn" %></br></br>
+        <%= link_to I18n.t("seller.makers.destroy.btn"), seller_maker_path(@maker.id), method: :delete,
+            class: "mt-3", "data-confirmation" => I18n.t("seller.makers.destroy.confirmation") %>
+      </div>
+    </div>
   <% end %>
 </div>

@@ -22,6 +22,10 @@ class Seller::SessionsController < Devise::SessionsController
     new_maker_session_path
   end
   
+  def after_sign_in_path_for(resource)
+    seller_shops_path
+  end
+  
   def guest_sign_in
     maker = Maker.guest
     sign_in maker

@@ -6,12 +6,12 @@
       <%= f.label :email, class: "col-md-3" %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control col-md-5" %>
     </div>
-  
+
     <div class="row form-group justify-content-center">
       <%= f.label :password, class: "col-md-3" %>
       <%= f.password_field :password, autocomplete: "current-password", class: "form-control col-md-5" %>
     </div>
-  
+
     <% if devise_mapping.rememberable? %>
       <div class="row justify-content-center">
         <div class="col-md-8 text-right">
@@ -20,11 +20,12 @@
         </div>
       </div>
     <% end %>
-  
+
     <div class="actions row justify-content-center">
       <div class="col-md-8 text-right">
         <%= f.submit I18n.t("btn.log_in"), class: "btn btn-sm common-btn" %></br>
         <%= render "consumer/shared/links" %></br></br>
+        <%= link_to "＞" + I18n.t("link.maker_login"), new_maker_session_path %></br></br>
         <%= link_to I18n.t("btn.guest_login"), users_guest_sign_in_path, method: :post, class: "btn btn-sm btn-secondary" %>
       </div>
     </div>

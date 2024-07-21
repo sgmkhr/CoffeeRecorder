@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   end
 
   def ensure_guest_maker
-    maker = Maker.find(params[:id])
+    maker = params[:id] ? Maker.find(params[:id]) : Maker.find(params[:maker_id])
     if maker.guest_maker?
       redirect_to request.referer, alert: I18n.t("seller.guest_login.alert")
     end
