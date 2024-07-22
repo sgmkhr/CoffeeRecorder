@@ -4,7 +4,7 @@ class InformationPost < ApplicationRecord
   has_one_attached :information_image
 
   validates :title, presence: true, length: { maximum: 100 }
-  validtaes :body, presence: true, length: { maximum: 1000 }
+  validates :body, presence: true, length: { maximum: 1000 }
 
   def get_information_image(width, height)
     unless information_image.attached?

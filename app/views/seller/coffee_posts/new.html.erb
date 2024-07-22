@@ -1,2 +1,9 @@
-<h1>Seller::CoffeePosts#new</h1>
-<p>Find me in app/views/seller/coffee_posts/new.html.erb</p>
+<div class="link-navi">
+  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path(maker_id: current_maker.id) %><span> ＞</span>
+  <%= link_to I18n.t("seller.shops.show.title"), seller_shop_path(maker_id: current_maker.id, id: @shop.id) %><span> ＞</span>
+  <%= I18n.t("seller.coffee_posts.new.title") %>
+</div>
+
+<div class="main-container">
+  
+</div>

@@ -1,33 +1,49 @@
-<div class="text-center d-flex">
-  <h4><%= @shop.name %></h4>
+<div class="link-navi">
+  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path(maker_id: @maker.id) %><span> ＞</span>
+  <%= I18n.t("seller.shops.show.title") %>
 </div>
 
-<div class="text-right">
-  <%= link_to seller_new_coffee_posts_path do %>
-    <i class="fa-solid fa-circle-plus"></i>
-  <% end %>
-</div>
-<% @coffees.each do |coffee| %>
-  <div class="d-flex justify-content-center">
-    <div class="d-flex">
-      <div class="bordered col-md-5 col-12 m-md-1 my-1 mx-0">
-        <%= coffee.name %>
+<div class="main-container">
+  <div class="d-flex justify-content-between">
+    <h4><%= @shop.name %></h4>
+    <%= link_to edit_seller_shop_path(id: @shop.id) do %>
+      <i class="fa-solid fa-gear"></i>
+    <% end %>
+  </div>
+  
+  <div>
+    <p><%= @shop.address %></p>
+    <p><%= @shop.introduction %></p>
+    <p><%= @shop.website %></p>
+  </div>
+  
+  <div class="text-right">
+    <%= link_to new_seller_shop_coffee_post_path(@shop.id) do %>
+      <i class="fa-solid fa-circle-plus"></i>
+    <% end %>
+  </div>
+  <% @coffees.each do |coffee| %>
+    <div class="d-flex justify-content-center">
+      <div class="d-flex">
+        <div class="bordered col-md-5 col-12 m-md-1 my-1 mx-0">
+          <%= coffee.name %>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
-<div class="text-center">
-  <%= paginate @coffees, page: "coffee_page", theme: "bootstrap-5" %>
-</div>
-
-<div class="text-right">
-  <%= link_to seller_new_information_posts_path do %>
-    <i class="fa-solid fa-circle-plus"></i>
   <% end %>
-</div>
-<% @informations.each do |information| %>
-  <!--後ほど作成-->
-<% end %>
-<div class="text-center">
-  <%= paginate @informations, page: "information_page", theme: "bootstrap-5" %>
+  <div class="text-center">
+    <%= paginate @coffees, page: "coffee_page", theme: "bootstrap-5" %>
+  </div>
+  
+  <div class="text-right">
+    <%= link_to new_seller_shop_information_post_path(@shop.id) do %>
+      <i class="fa-solid fa-circle-plus"></i>
+    <% end %>
+  </div>
+  <% @informations.each do |information| %>
+    <!--後ほど作成-->
+  <% end %>
+  <div class="text-center">
+    <%= paginate @informations, page: "information_page", theme: "bootstrap-5" %>
+  </div>
 </div>

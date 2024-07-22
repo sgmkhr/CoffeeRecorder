@@ -12,6 +12,6 @@ class Shop < ApplicationRecord
   validates :website, length: { maximum: 200 }
 
   def get_shop_image(width, height)
-    shop_image.variant(resize_to_limit: [width, height]).processed unless shop_image.nil?
+    shop_image.variant(resize_to_limit: [width, height]).processed
   end
 end

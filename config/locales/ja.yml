@@ -40,6 +40,10 @@ ja:
         title: 販売者トップページ
         section_title: 自社店舗一覧
         no_exist: 店舗はありません。
+      edit:
+        title: 店舗情報編集
+      show:
+        title: 店舗詳細
     coffee_posts:
       create:
         notice: 新しいコーヒーを作成しました。

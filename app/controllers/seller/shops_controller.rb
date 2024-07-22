@@ -3,7 +3,7 @@ class Seller::ShopsController < ApplicationController
   before_action :ensure_guest_maker, only: [:create, :update, :destroy]
   def index
     @shop = Shop.new
-    @shops = current_maker.shops
+    @shops = current_maker.shops.page(params[:page]).per(20)
   end
   
   def create

@@ -72,6 +72,10 @@ en:
         title: Top page
         section_title: Company shops list
         no_exist: "No shop exists yet."
+      edit:
+        title: Shop's information editing page
+      show:
+        title: Shop details
     coffee_posts:
       create:
         notice: The new coffee has been created.

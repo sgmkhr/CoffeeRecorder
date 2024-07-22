@@ -1,30 +1,34 @@
-<div class="text-center">
+<div class="link-navi">
+  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path(maker_id: @maker.id) %><span> ＞</span>
+  <%= link_to I18n.t("seller.shops.show.title"), seller_shop_path(maker_id: current_maker.id, id: @shop.id) %><span> ＞</span>
   <%= I18n.t("seller.shops.edit.title") %>
 </div>
 
-<div class="errors">
-  <%= render "layouts/errors", obj: @shop %>
-</div>
-<%= form_with model: @shop do |f| %>
-  <div class="form-group row justify-content-center">
-    <%= f.label :name, class: "col-md-3 col-12" %>
-    <%= f.text_field :name, class: "form-control col-md-7" %>
+<div class="main-container">
+  <div class="errors">
+    <%= render "layouts/errors", obj: @shop %>
   </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :address, class: "col-md-3 col-12" %>
-    <%= f.text_field :address, class: "form-control col-md-7" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :introduction, class: "col-md-3 col-12" %>
-    <%= f.text_area :introduction, class: "form-control col-md-7" %>
-  </div>
-  <div class="form-group row justify-content-center">
-    <%= f.label :website, class: "col-md-3 col-12" %>
-    <%= f.text_field :website, class: "form-control col-md-7" %>
-  </div>
-  <div class="actions row">
-    <div class="col-md-10 text-right">
-      <%= f.submit I18n.t("btn.update"), class: "btn btn-sm" %>
+  <%= form_with model: @shop, url: seller_shop_path(@shop.id), method: :patch do |f| %>
+    <div class="form-group row justify-content-center">
+      <%= f.label :name, class: "col-md-3 col-12" %>
+      <%= f.text_field :name, class: "form-control col-md-7" %>
     </div>
-  </div>
-<% end %>
+    <div class="form-group row justify-content-center">
+      <%= f.label :address, class: "col-md-3 col-12" %>
+      <%= f.text_field :address, class: "form-control col-md-7" %>
+    </div>
+    <div class="form-group row justify-content-center">
+      <%= f.label :introduction, class: "col-md-3 col-12" %>
+      <%= f.text_area :introduction, class: "form-control col-md-7" %>
+    </div>
+    <div class="form-group row justify-content-center">
+      <%= f.label :website, class: "col-md-3 col-12" %>
+      <%= f.text_field :website, class: "form-control col-md-7" %>
+    </div>
+    <div class="actions row">
+      <div class="col-md-10 text-right">
+        <%= f.submit I18n.t("btn.update"), class: "btn btn-sm common-btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>
