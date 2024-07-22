@@ -12,10 +12,10 @@
       </div>
     </div>
     <div class="col-md-6 mt-md-3">
-      <p class="overflow-hidden text-nowrap text-truncate">
+      <p>
         <i class="fa-solid fa-tablets"></i><%= @coffee.name %>
       </p>
-      <p class="overflow-hidden text-nowrap text-truncate">
+      <p>
         <i class="fa-solid fa-store"></i><%= @coffee.shop.name %>
       </p>
       <p>
@@ -26,9 +26,9 @@
           <%= I18n.t("consumer.coffee_posts.show.online_sale.false") %>
         <% end %>
       </p>
-      <p><%= I18n.t("activerecord.attributes.coffee_post.brewing") + "：" + @coffee.scene_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.coffee_post.roasting") + "：" + @coffee.brewing_i18n %></p>
-      <p><%= I18n.t("activerecord.attributes.coffee_post.grind_size") + "：" + @coffee.rate_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.brewing") + "：" + @coffee.brewing_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.roasting") + "：" + @coffee.roasting_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.grind_size") + "：" + @coffee.grind_size_i18n %></p>
       <p><%= I18n.t("activerecord.attributes.coffee_post.sweetness") + "：" + @coffee.sweetness_i18n %></p>
       <p><%= I18n.t("activerecord.attributes.coffee_post.acidity") + "：" + @coffee.acidity_i18n %></p>
       <p><%= I18n.t("activerecord.attributes.coffee_post.bitterness") + "：" + @coffee.bitterness_i18n %></p>

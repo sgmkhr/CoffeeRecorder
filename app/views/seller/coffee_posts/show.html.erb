@@ -5,5 +5,36 @@
 </div>
 
 <div class="main-container">
-  
+  <div class="col-md-6">
+    <div>
+      <%= image_tag @coffee.get_coffee_image(300, 300) %>
+    </div>
+    <%= link_to I18n.t("btn.edit"), edit_seller_shop_coffee_post_path(maker_id: current_maker.id, @shop.id, @coffee.id), class: "btn border rounded mt-3" %>
+  </div>
+  <div class="col-md-6 mt-md-3">
+    <p>
+      <i class="fa-solid fa-tablets"></i><%= @coffee.name %>
+    </p>
+    <p>
+      <%= I18n.t("activerecord.attributes.coffee_post.online_sale") + "：" %>
+      <% if @coffee.online_sale %>
+        <%= I18n.t("consumer.coffee_posts.show.online_sale.true") %>
+      <% else %>
+        <%= I18n.t("consumer.coffee_posts.show.online_sale.false") %>
+      <% end %>
+    </p>
+    <p><%= I18n.t("activerecord.attributes.coffee_post.brewing") + "：" + @coffee.brewing_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.roasting") + "：" + @coffee.roasting_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.grind_size") + "：" + @coffee.grind_size_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.sweetness") + "：" + @coffee.sweetness_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.acidity") + "：" + @coffee.acidity_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.bitterness") + "：" + @coffee.bitterness_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.strength") + "：" + @coffee.strength_i18n %></p>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.aftertaste") + "：" + @coffee.aftertaste_i18n %></p>
+      <p><%= @coffee.supplement %></p>
+    </div>
+  </div>
+  <div>
+    <p><%= @coffee.introduction %></p>
+  </div>
 </div>

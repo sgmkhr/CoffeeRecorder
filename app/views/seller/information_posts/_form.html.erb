@@ -1,0 +1,17 @@
+<%= form_with model: information do |f| %>
+  <div class="row justify-content-center">
+    <div class="col-md-10 form-group row">
+      <%= f.label :title, class: "col-4" %>
+      <%= f.text_field :title, class: "col-8 form-control" %>
+    </div>
+    <div class="col-md-10 form-group row">
+      <%= f.label :body, class: "col-4" %>
+      <%= f.text_area :body, class: "col-8 form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="actions col-md-10 text-right">
+      <%= f.submit btn_name, class: "btn btn-sm common-btn" %>
+    </div>
+  </div>
+<% end %>
