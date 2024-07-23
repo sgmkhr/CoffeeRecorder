@@ -12,6 +12,10 @@ class Shop < ApplicationRecord
   validates :website, length: { maximum: 200 }
 
   def get_shop_image(width, height)
+    unless shop_image.attached?
+      file_path = Rails.root.join('app/assets/images/shop_default_image.jpg')
+      shop_image.attach(io: File.open(file_path), filename: 'shop_default_image.jpg', content_type: 'image/jpeg')
+    end
     shop_image.variant(resize_to_limit: [width, height]).processed
   end
 end
