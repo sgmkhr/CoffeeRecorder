@@ -5,7 +5,7 @@ class CoffeePost < ApplicationRecord
 
   validates :name, presence: true, length: { maximum: 100 }
   validates :introduction, presence: true, length: { maximum: 1000 }
-  validates :supplement, presence: true, length: { maximum: 1000 }
+  validates :supplement, length: { maximum: 1000 }
 
   enum brewing: { unspecified_brewing: 0, paper_drip: 1, flannel_drip: 2, french_press: 3,
                   aero_press: 4, siphon: 5, water_drip: 6, espresso_machine: 7, other_brewing: 8 }

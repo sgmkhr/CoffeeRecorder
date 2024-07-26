@@ -12,15 +12,13 @@ class ApplicationController < ActionController::Base
   private
 
   def ensure_guest_user
-    user = params[:user_id] ? User.find(params[:user_id]) : User.find(params[:id])
-    if user.guest_user?
+    if current_user.guest_user?
       redirect_to request.referer, alert: I18n.t("consumer.guest_login.alert")
     end
   end
 
   def ensure_guest_maker
-    maker = params[:maker_id] ? Maker.find(params[:maker_id]) : Maker.find(params[:id])
-    if maker.guest_maker?
+    if current_maker.guest_maker?
       redirect_to request.referer, alert: I18n.t("seller.guest_login.alert")
     end
   end

@@ -11,9 +11,9 @@
       <%= image_tag @coffee.get_coffee_image(270, 270), class: "d-md-none d-sm-block d-none" %>
       <%= image_tag @coffee.get_coffee_image(240, 240), class: "d-md-none" %>
     </div>
-    <p class="mb-"><%= @coffee.introduction %></p>
+    <p class="mb-3"><%= @coffee.introduction %></p>
   </div>
-  <div class="col-md-6 mt-md-3">
+  <div class="col-md-6">
     <p>
       <i class="fa-solid fa-tablets"></i><%= @coffee.name %>
     </p>
@@ -25,7 +25,8 @@
         <%= I18n.t("consumer.coffee_posts.show.online_sale.false") %>
       <% end %>
     </p>
-    <p><%= I18n.t("activerecord.attributes.coffee_post.brewing") + "：" + @coffee.brewing_i18n %></p>
+    <div>
+      <p><%= I18n.t("activerecord.attributes.coffee_post.brewing") + "：" + @coffee.brewing_i18n %></p>
       <p><%= I18n.t("activerecord.attributes.coffee_post.roasting") + "：" + @coffee.roasting_i18n %></p>
       <p><%= I18n.t("activerecord.attributes.coffee_post.grind_size") + "：" + @coffee.grind_size_i18n %></p>
       <p><%= I18n.t("activerecord.attributes.coffee_post.sweetness") + "：" + @coffee.sweetness_i18n %></p>
@@ -36,7 +37,7 @@
       <p><%= @coffee.supplement %></p>
     </div>
     <div class="text-right">
-      <%= link_to I18n.t("btn.edit"), edit_seller_shop_coffee_post_path(maker_id: current_maker.id, @shop.id, @coffee.id), class: "btn border rounded" %>
+      <%= link_to I18n.t("btn.edit"), edit_seller_shop_coffee_post_path(@shop.id, @coffee.id), class: "btn border rounded" %>
     </div>
   </div>
 </div>

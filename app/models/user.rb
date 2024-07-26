@@ -57,6 +57,7 @@ class User < ApplicationRecord
   end
 
   def get_matching_coffee_posts
-    [] #後ほど実装
+    sweetness, acidity, bitterness, strength, aftertaste = self.get_coffee_preference_data_array
+    CoffeePost.where(sweetness: sweetness, acidity: acidity, bitterness: bitterness, strength: strength, aftertaste: aftertaste)
   end
 end

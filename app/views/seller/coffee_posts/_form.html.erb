@@ -1,3 +1,7 @@
+<div class="errors text-center">
+  <%= render "layouts/errors", obj: coffee %>
+</div>
+
 <%= form_with model: [:seller, shop, coffee] do |f| %>
   <div class="row justify-content-center">
     <div class="col-md-10 form-group row">

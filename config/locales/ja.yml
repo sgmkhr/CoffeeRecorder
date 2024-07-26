@@ -59,6 +59,7 @@ ja:
         online_sale:
           false: 無
           true: 有
+        title: コーヒー投稿詳細
       new:
         title: コーヒー新規投稿
       edit:

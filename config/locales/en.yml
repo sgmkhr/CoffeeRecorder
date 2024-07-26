@@ -91,6 +91,7 @@ en:
         online_sale:
           false: available
           true: not available
+        title: Coffee post details
       new:
         title: New coffee
       edit:
