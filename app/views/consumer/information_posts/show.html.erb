@@ -5,24 +5,24 @@
   <%= I18n.t("consumer.information_posts.show.title") %>
 </div>
 
-<div class="main-container">
-  <div class="row">
-    <div class="col-md-6">
-      <div>
-        <%= image_tag @information.get_information_image(300, 300) %>
-      </div>
+<div class="main-container row">
+  <div class="col-md-6">
+    <div class="mb-3 d-flex justify-content-center">
+      <%= image_tag @information.get_information_image(300, 300), class: "d-md-block d-sm-none d-none" %>
+      <%= image_tag @information.get_information_image(270, 270), class: "d-md-none d-sm-block d-none" %>
+      <%= image_tag @information.get_information_image(240, 240), class: "d-md-none" %>
     </div>
-    <div class="col-md-6 mt-md-3">
-      <p class="overflow-hidden text-nowrap text-truncate">
-        <i class="fa-solid fa-tablets"></i><%= @information.title %>
-      </p>
-      <p class="overflow-hidden text-nowrap text-truncate">
-        <i class="fa-solid fa-store"></i><%= @information.shop.name %>
-      </p>
-      <p>
-        <%= @information.body %>
-      </p>
-    </div>
+  </div>
+  <div class="col-md-6 mt-md-3">
+    <p class="overflow-hidden text-nowrap text-truncate">
+      <i class="fa-solid fa-tablets"></i><%= @information.title %>
+    </p>
+    <p class="overflow-hidden text-nowrap text-truncate">
+      <i class="fa-solid fa-store"></i><%= @information.shop.name %>
+    </p>
+    <p>
+      <%= @information.body %>
+    </p>
   </div>
 </div>
 

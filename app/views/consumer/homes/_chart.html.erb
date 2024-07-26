@@ -1,4 +1,4 @@
-<% if current_user.records.any? %>
+<% if preference_data %>
   
   <canvas id="myLineChart"></canvas>
   
@@ -39,5 +39,5 @@
     });
   </script>
 <% else %>
-  <p><%= I18n.t("consumer.homes.no_data") %></p>
+  <p class="text-center mt-5"><%= I18n.t("consumer.homes.no_data") %></p>
 <% end %>

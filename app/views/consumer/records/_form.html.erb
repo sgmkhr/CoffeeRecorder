@@ -13,44 +13,44 @@
       <%= f.text_field :shop_name, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :scene, class: "col-4" %>
-      <%= f.select :scene, Record.scenes.keys.map {|k| [I18n.t("enums.record.scene.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :scene, class: "col-md-4" %>
+      <%= f.select :scene, Record.scenes.keys.map {|k| [I18n.t("enums.record.scene.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :brewing, class: "col-4" %>
-      <%= f.select :brewing, Record.brewings.keys.map {|k| [I18n.t("enums.record.brewing.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :brewing, class: "col-md-4" %>
+      <%= f.select :brewing, Record.brewings.keys.map {|k| [I18n.t("enums.record.brewing.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :sweetness, class: "col-4" %>
-      <%= f.select :sweetness, Record.sweetnesses.keys.map {|k| [I18n.t("enums.record.sweetness.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :sweetness, class: "col-md-4" %>
+      <%= f.select :sweetness, Record.sweetnesses.keys.map {|k| [I18n.t("enums.record.sweetness.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :acidity, class: "col-4" %>
-      <%= f.select :acidity, Record.acidities.keys.map {|k| [I18n.t("enums.record.acidity.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :acidity, class: "col-md-4" %>
+      <%= f.select :acidity, Record.acidities.keys.map {|k| [I18n.t("enums.record.acidity.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :bitterness, class: "col-4" %>
-      <%= f.select :bitterness, Record.bitternesses.keys.map {|k| [I18n.t("enums.record.bitterness.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :bitterness, class: "col-md-4" %>
+      <%= f.select :bitterness, Record.bitternesses.keys.map {|k| [I18n.t("enums.record.bitterness.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :strength, class: "col-4" %>
-      <%= f.select :strength, Record.strengths.keys.map {|k| [I18n.t("enums.record.strength.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :strength, class: "col-md-4" %>
+      <%= f.select :strength, Record.strengths.keys.map {|k| [I18n.t("enums.record.strength.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :aftertaste, class: "col-4" %>
-      <%= f.select :aftertaste, Record.aftertastes.keys.map {|k| [I18n.t("enums.record.aftertaste.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :aftertaste, class: "col-md-4" %>
+      <%= f.select :aftertaste, Record.aftertastes.keys.map {|k| [I18n.t("enums.record.aftertaste.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :impression, class: "col-md-4 col-12" %>
       <%= f.text_area :impression, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :rate, class: "col-4" %>
-      <%= f.select :rate, Record.rates.keys.map {|k| [I18n.t("enums.record.rate.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.label :rate, class: "col-md-4" %>
+      <%= f.select :rate, Record.rates.keys.map {|k| [I18n.t("enums.record.rate.#{k}"), k]}, class: "col-md-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
-      <%= f.label :record_image, class: "col-4" %>
-      <%= f.file_field :record_image, accept: "image/*", class: "col-8" %>
+      <%= f.label :record_image, class: "col-md-4" %>
+      <%= f.file_field :record_image, accept: "image/*", class: "col-md-8" %>
     </div>
   </div>
   <div class="row">

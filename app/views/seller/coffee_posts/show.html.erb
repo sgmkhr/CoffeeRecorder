@@ -4,12 +4,14 @@
   <%= I18n.t("seller.coffee_posts.show.title") %>
 </div>
 
-<div class="main-container">
+<div class="main-container row">
   <div class="col-md-6">
-    <div>
-      <%= image_tag @coffee.get_coffee_image(300, 300) %>
+    <div class="mb-3 d-flex justify-content-center">
+      <%= image_tag @coffee.get_coffee_image(300, 300), class: "d-md-block d-sm-none d-none" %>
+      <%= image_tag @coffee.get_coffee_image(270, 270), class: "d-md-none d-sm-block d-none" %>
+      <%= image_tag @coffee.get_coffee_image(240, 240), class: "d-md-none" %>
     </div>
-    <%= link_to I18n.t("btn.edit"), edit_seller_shop_coffee_post_path(maker_id: current_maker.id, @shop.id, @coffee.id), class: "btn border rounded mt-3" %>
+    <p class="mb-"><%= @coffee.introduction %></p>
   </div>
   <div class="col-md-6 mt-md-3">
     <p>
@@ -33,8 +35,8 @@
       <p><%= I18n.t("activerecord.attributes.coffee_post.aftertaste") + "：" + @coffee.aftertaste_i18n %></p>
       <p><%= @coffee.supplement %></p>
     </div>
-  </div>
-  <div>
-    <p><%= @coffee.introduction %></p>
+    <div class="text-right">
+      <%= link_to I18n.t("btn.edit"), edit_seller_shop_coffee_post_path(maker_id: current_maker.id, @shop.id, @coffee.id), class: "btn border rounded" %>
+    </div>
   </div>
 </div>

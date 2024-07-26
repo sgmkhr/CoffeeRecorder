@@ -5,10 +5,12 @@
 
 <div class="main-container row">
   <div class="col-md-6">
-    <div>
-      <%= image_tag @record.get_record_image(300, 300) %>
+    <div class="mb-3 d-flex justify-content-center">
+      <%= image_tag @record.get_record_image(300, 300), class: "d-md-block d-sm-none d-none" %>
+      <%= image_tag @record.get_record_image(270, 270), class: "d-md-none d-sm-block d-none" %>
+      <%= image_tag @record.get_record_image(240, 240), class: "d-md-none" %>
     </div>
-    <%= link_to I18n.t("btn.edit"), edit_user_record_path(current_user.id, @record.id), class:"btn border rounded mt-3" %>
+    <p class="mb-3"><%= @record.impression %></p>
   </div>
   <div class="col-md-6 mt-md-3">
     <p class="overflow-hidden text-nowrap text-truncate">
@@ -25,5 +27,8 @@
     <p><%= I18n.t("activerecord.attributes.record.strength") %>:<%= @record.strength_i18n %></p>
     <p><%= I18n.t("activerecord.attributes.record.aftertaste") %>:<%= @record.aftertaste_i18n %></p>
     <p><%= I18n.t("activerecord.attributes.record.rate") %>:<%= @record.rate_i18n %></p>
+    <div class="text-right">
+      <%= link_to I18n.t("btn.edit"), edit_user_record_path(current_user.id, @record.id), class:"btn border rounded mt-3" %>
+    </div>
   </div>
 </div>

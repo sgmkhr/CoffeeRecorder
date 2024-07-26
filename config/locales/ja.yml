@@ -86,6 +86,9 @@ ja:
       title: トップページ
       chart_label: あなたの好み分析グラフ
       no_data: 分析できるデータがありません
+      main_tab_title: あなたにおすすめのコーヒー
+      new_record_tab_title: 出会ったコーヒーを記録する
+      index_tab_title: あなたのコーヒー記録
     users:
       update:
         notice: 登録情報を更新しました。

@@ -7,12 +7,12 @@
       <% end %>
     </li>
     <li>
-      <%= link_to edit_user_path do %>
+      <%= link_to edit_user_path(user_id: current_user.id) do %>
         <i class="fa-solid fa-user-pen"></i>
       <% end %>
     </li>
     <li>
-      <%= link_to destroy_user_session_path, method: :delete do %>
+      <%= link_to destroy_user_session_path(user_id: current_user.id), method: :delete do %>
         <i class="fa-solid fa-right-from-bracket"></i>
       <% end %>
     </li>
@@ -23,7 +23,7 @@
       <% end %>
     </li>
     <li>
-      <%= link_to destroy_maker_session_path, method: :delete do %>
+      <%= link_to destroy_maker_session_path(maker_id: current_maker.id), method: :delete do %>
         <i class="fa-solid fa-right-from-bracket"></i>
       <% end %>
     </li>

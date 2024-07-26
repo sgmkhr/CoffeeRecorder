@@ -4,17 +4,21 @@
   <%= I18n.t("seller.information_posts.show.title") %>
 </div>
 
-<div class="main-container">
+<div class="main-container row">
   <div class="col-md-6">
-    <div>
-      <%= image_tag @coffee.get_coffee_image(300, 300) %>
+    <div class="mb-3 d-flex justify-content-center">
+      <%= image_tag @coffee.get_coffee_image(300, 300), class: "d-md-block d-sm-none d-none" %>
+      <%= image_tag @coffee.get_coffee_image(270, 270), class: "d-md-none d-sm-block d-none" %>
+      <%= image_tag @coffee.get_coffee_image(240, 240), class: "d-md-none" %>
     </div>
-    <%= link_to I18n.t("btn.edit"), edit_seller_shop_information_post_path(maker_id: current_maker.id, @shop.id, @information.id), class: "btn border rounded mt-3" %>
   </div>
-  <div class="col-md-6 mt-md-3">
+  <div class="col-md-6">
     <p><%= @information.title %></p>
     <div>
       <p><%= @information.body %></p>
+    </div>
+    <div class="text-right">
+      <%= link_to I18n.t("btn.edit"), edit_seller_shop_information_post_path(maker_id: current_maker.id, @shop.id, @information.id), class: "btn border rounded" %>
     </div>
   </div>
 </div>

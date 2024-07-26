@@ -118,6 +118,9 @@ en:
       title: Top page
       chart_label: Graph of your preferences
       no_data: "There is no data to analyze."
+      main_tab_title: Coffees recommended for you
+      new_record_tab_title: Record coffees you tasted
+      index_tab_title: Your coffee records
     users:
       update:
         notice: The information has been updated.
