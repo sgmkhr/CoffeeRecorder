@@ -18,8 +18,42 @@ class User < ApplicationRecord
     email == GUEST_USER_EMAIL_AS_USER
   end
 
-  def get_coffee_preference_data
-
+  def get_coffee_preference_data_array
+    sweetness, acidity, bitterness, strength, aftertaste = [], [], [], [], []
+    records.each do |record|
+      case record.rate
+      when "excellent" then
+        [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
+          n = record.read_attribute_before_type_cast(attribute)
+          sweetness.push(n, n, n)  if attribute == :sweetness
+          acidity.push(n, n, n)    if attribute == :acidity
+          bitterness.push(n, n, n) if attribute == :bitterness
+          strength.push(n, n, n)   if attribute == :strength
+          aftertaste.push(n, n, n) if attribute == :aftertaste
+        end
+      when "very_good" then
+        [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
+          n = record.read_attribute_before_type_cast(attribute)
+          sweetness.push(n, n)  if attribute == :sweetness
+          acidity.push(n, n)    if attribute == :acidity
+          bitterness.push(n, n) if attribute == :bitterness
+          strength.push(n, n)   if attribute == :strength
+          aftertaste.push(n, n) if attribute == :aftertaste
+        end
+      when "good" then
+        [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
+          n = record.read_attribute_before_type_cast(attribute)
+          sweetness.push(n)  if attribute == :sweetness
+          acidity.push(n)    if attribute == :acidity
+          bitterness.push(n) if attribute == :bitterness
+          strength.push(n)   if attribute == :strength
+          aftertaste.push(n) if attribute == :aftertaste
+        end
+      end
+    end
+    [sweetness, acidity, bitterness, strength, aftertaste].map do |data|
+      (data.sum / data.length).round
+    end
   end
 
   def get_matching_coffee_posts

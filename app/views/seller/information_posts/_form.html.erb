@@ -1,4 +1,4 @@
-<%= form_with model: information do |f| %>
+<%= form_with model: [:seller, shop, information] do |f| %>
   <div class="row justify-content-center">
     <div class="col-md-10 form-group row">
       <%= f.label :title, class: "col-4" %>

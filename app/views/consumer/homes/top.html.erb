@@ -1,39 +1,47 @@
-<ul id="tab-menu" class="d-flex justify-content-between list-unstyled mb-0">
-  <li><a href="#main_tab" class="main_tab">
-    <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-magnifying-glass-chart"></i>
-  </a></li>
-  <li><a href="#new_record_tab" class="new_record_tab">
-    <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-plus"></i>
-  </a></li>
-  <li><a href="#index_tab" class="index_tab">
-    <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-tablets"></i><i class="fa-solid fa-tablets"></i>
-  </a></li>
-</ul>
-
-
-<div id="tab-contents" class="main-container">
-  <div id="main_tab" class="tab">
-    <div>
-      preference data chart
-      <p><%= current_user.records.count.to_s + I18n.t("consumer.records.index.count") %></p>
+<div class="row">
+  <div class="col-md-5">
+    <div id="chart">
+      <%= render "consumer/homes/chart", preference_data: @preference_data %>
     </div>
-    <div>
-      <%= render "consumer/coffee_posts/index", coffees: @coffees, param_name: "coffee_posts_page", tab_name: "main_tab" %>
-    </div>
-    <div class="text-right">
-      <%= link_to coffee_posts_path do %>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <%= I18n.t("consumer.coffee_posts.index.link") %>
-      <% end %>
-    </div>
+    <p class="text-right sm-text">
+      <%= current_user.records.count.to_s + I18n.t("consumer.records.index.count") %>
+    </p>
   </div>
-
-  <div id="new_record_tab" class="tab">
-    <%= render "consumer/records/form", record: @record %>
-  </div>
-
-  <div id="index_tab" class="tab">
-    <%= render "consumer/records/index", records: @records, tab_name: "index_tab" %>
+  
+  <div class="col-md-7">
+    <ul id="tab-menu" class="d-flex justify-content-between list-unstyled mb-0">
+      <li><a href="#main_tab" class="main_tab">
+        <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-magnifying-glass-chart"></i>
+      </a></li>
+      <li><a href="#new_record_tab" class="new_record_tab">
+        <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-plus"></i>
+      </a></li>
+      <li><a href="#index_tab" class="index_tab">
+        <i class="fa-solid fa-tablets"></i><i class="fa-solid fa-tablets"></i><i class="fa-solid fa-tablets"></i>
+      </a></li>
+    </ul>
+    
+    <div id="tab-contents" class="main-container">
+      <div id="main_tab" class="tab">
+        <div>
+          <%= render "consumer/coffee_posts/index", coffees: @coffees, param_name: "coffee_posts_page", tab_name: "main_tab" %>
+        </div>
+        <div class="text-right">
+          <%= link_to coffee_posts_path do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <%= I18n.t("consumer.coffee_posts.index.link") %>
+          <% end %>
+        </div>
+      </div>
+    
+      <div id="new_record_tab" class="tab">
+        <%= render "consumer/records/form", record: @record %>
+      </div>
+    
+      <div id="index_tab" class="tab">
+        <%= render "consumer/records/index", records: @records, tab_name: "index_tab" %>
+      </div>
+    </div>
   </div>
 </div>
 

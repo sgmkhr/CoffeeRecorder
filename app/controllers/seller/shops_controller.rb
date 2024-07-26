@@ -29,7 +29,7 @@ class Seller::ShopsController < ApplicationController
   def update
     @shop = Shop.find(params[:id])
     if @shop.update(shop_params)
-      redirect_to seller_shops_path, notice: I18n.t("seller.shops.update.notice")
+      redirect_to seller_shop_path(@shop.id), notice: I18n.t("seller.shops.update.notice")
     else
       flash.now[:alert] = I18n.t("seller.shops.update.alert")
       render :edit

@@ -87,6 +87,14 @@ en:
         notice: The coffee has been deleted.
       reject:
         alert: You cannot edit other shops' data.
+      show:
+        online_sale:
+          false: available
+          true: not available
+      new:
+        title: New coffee
+      edit:
+        title: Coffee post editing page
     information_posts:
       create:
         notice: The new information post has been created.
@@ -98,12 +106,18 @@ en:
         notice: The information post has been deleted.
       reject:
         alert: You cannot edit other shops' data.
+      new:
+        title: New information from shop
+      edit:
+        title: Information post editing page
   consumer:
     guest_login:
       notice: You logged in as a guest user of consumers.
       alert: A guest user cannot operate this function. You need to log in or sign up.
     homes:
       title: Top page
+      chart_label: Graph of your preferences
+      no_data: "There is no data to analyze."
     users:
       update:
         notice: The information has been updated.
@@ -158,6 +172,7 @@ en:
       record: record
       shop: shop
       coffee_post: Coffee
+      information_post: Information
     attributes:
       record:
         coffee_name: coffee name
@@ -190,6 +205,10 @@ en:
         strength: strength
         aftertaste: aftertaste
         supplement: supplement
+        coffee_image: image
+      information_post:
+        title: Title
+        body: Content
 
   enums:
     record:

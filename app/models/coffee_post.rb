@@ -12,11 +12,11 @@ class CoffeePost < ApplicationRecord
   enum roasting: { unspecified_roasting: 0, light_roast: 1, cinnamon_roast: 2, medium_roast: 3, high_roast: 4, city_roast: 5,
                    fullcity_roast: 6, french_roast: 7, italian_roast: 8, other: 9 }
   enum grind_size: { unspecified_grind_size: 0, coarse: 1, medium_coarse: 2, medium: 3, medium_fine: 4, fine: 5, turkish: 6, other_grind_size: 7 }
-  enum sweetness: { unspecified_sweetness: 0, very_sweet: 1, sweet: 2, little_sweet: 3, less_sweet: 4, not_sweet: 5 }
-  enum acidity: { unspecified_acidity: 0, very_sour: 1, sour: 2, little_sour: 3, less_sour: 4, not_sour: 5 }
-  enum bitterness: { unspecified_bitterness: 0, very_bitter: 1, bitter: 2, little_bitter: 3, less_bitter: 4, not_bitter: 5 }
-  enum strength: { unspecified_strength: 0, high: 1, little_high: 2, strength_balanced: 3, little_low: 4, low: 5 }
-  enum aftertaste: { unspecified_aftertaste: 0, sharp: 1, richness: 2, clean: 3, mellow: 4, aftertaste_balanced: 5 }
+  enum sweetness: { unspecified_sweetness: 0, not_sweet: 1, less_sweet: 2, little_sweet: 3, sweet: 4, very_sweet: 5}
+  enum acidity: { unspecified_acidity: 0, not_sour: 1, less_sour: 2, little_sour: 3, sour: 4, very_sour: 5}
+  enum bitterness: { unspecified_bitterness: 0, not_bitter: 1, less_bitter: 2, little_bitter: 3, bitter: 4, very_bitter: 5}
+  enum strength: { unspecified_strength: 0, low: 1, little_low: 2, strength_balanced: 3, little_high: 4, high: 5}
+  enum aftertaste: { unspecified_aftertaste: 0, sharp: 1, clean: 2, aftertaste_balanced: 3, mellow: 4, richness: 5}
 
   def get_coffee_image(width, height)
     unless coffee_image.attached?

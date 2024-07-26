@@ -17,9 +17,9 @@ user.records.find_or_create_by!(coffee_name: "first_coffee") do |record|
   record.brewing = 2
   record.sweetness = 3
   record.acidity = 3
-  record.bitterness = 2
-  record.strength = 2
-  record.aftertaste = 2
+  record.bitterness = 4
+  record.strength = 4
+  record.aftertaste = 5
   record.impression = "重厚な感じで美味しかった。私はもう少しさっぱりした方が好みかも"
   record.rate = 3
 end
@@ -28,11 +28,11 @@ user.records.find_or_create_by!(coffee_name: "second_coffee") do |record|
   record.shop_name = "shop_second"
   record.scene = 3
   record.brewing = 8
-  record.sweetness = 4
-  record.acidity = 5
-  record.bitterness = 1
-  record.strength = 3
-  record.aftertaste = 5
+  record.sweetness = 2
+  record.acidity = 1
+  record.bitterness = 5
+  record.strength = 4
+  record.aftertaste = 3
   record.impression = "苦味はしっかりあるが、後味のバランスが良くてとても私好み"
   record.rate = 2
 end
@@ -54,11 +54,11 @@ shop1.coffee_posts.find_or_create_by!(name: "coffee_first") do |coffee|
   coffee.brewing = 1
   coffee.roasting = 3
   coffee.grind_size = 3
-  coffee.sweetness = 4
-  coffee.acidity = 4
+  coffee.sweetness = 2
+  coffee.acidity = 2
   coffee.bitterness = 3
   coffee.strength = 3
-  coffee.aftertaste = 5
+  coffee.aftertaste = 3
   coffee.supplement = "非常にバランスの良いコーヒーです"
 end
 

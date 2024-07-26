@@ -1,0 +1,43 @@
+<% if current_user.records.any? %>
+  
+  <canvas id="myLineChart"></canvas>
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    $(document).on('turbolinks:load', function() {
+      var ctx = document.getElementById("myLineChart");
+      var myLineChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ["<%= Record.human_attribute_name(:sweetness) %>",
+                   "<%= Record.human_attribute_name(:acidity) %>",
+                   "<%= Record.human_attribute_name(:bitterness) %>",
+                   "<%= Record.human_attribute_name(:strength) %>",
+                   "<%= Record.human_attribute_name(:aftertaste) %>"],
+          datasets: [
+            {
+              label: "<%= I18n.t("consumer.homes.chart_label") %>",
+              data: <%= preference_data %>,
+              borderColor: "rgba(210, 180, 140, 0.8)",
+              backgroundColor: "rgba(189, 183, 107, 0.5)"
+            }
+          ],
+        },
+        options: {
+          scale: {
+            pointLabels: {
+              fontColor: "green" //5角形の頂点の名前の色
+            },
+            ticks: {
+                min: 1, // 目盛最小値
+                max: 5, // 目盛最大値
+                stepSize: 1, // 目盛間隔
+            }
+          }
+        }
+      });
+    });
+  </script>
+<% else %>
+  <p><%= I18n.t("consumer.homes.no_data") %></p>
+<% end %>

@@ -55,6 +55,14 @@ ja:
         notice: コーヒーを削除しました。
       reject:
         alert: 他店舗のコーヒーデータは扱えません。
+      show:
+        online_sale:
+          false: 無
+          true: 有
+      new:
+        title: コーヒー新規投稿
+      edit:
+        title: コーチー投稿内容編集
     information_posts:
       create:
         notice: 新しいお知らせを作成しました。
@@ -66,12 +74,18 @@ ja:
         notice: お知らせを削除しました。
       reject:
         alert: 他店舗のお知らせデータは扱えません。
+      new:
+        title: お知らせ新規投稿
+      edit:
+        title: お知らせ投稿編集
   consumer:
     guest_login:
       notice: 消費者ゲストユーザーとしてログインしました
       alert: ゲストユーザーは制限されている操作です
     homes:
       title: トップページ
+      chart_label: あなたの好み分析グラフ
+      no_data: 分析できるデータがありません
     users:
       update:
         notice: 登録情報を更新しました。
@@ -126,6 +140,7 @@ ja:
       record: 記録
       shop: 店舗
       coffee_post: コーヒー
+      information_post: お知らせ
     attributes:
       record:
         coffee_name: コーヒー名
@@ -158,6 +173,10 @@ ja:
         strength: 濃度
         aftertaste: 後味
         supplement: 補足
+        coffee_image: 画像
+      information_post:
+        title: タイトル
+        body: 内容
 
   enums:
     record:

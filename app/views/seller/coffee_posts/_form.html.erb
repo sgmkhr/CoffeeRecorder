@@ -1,4 +1,4 @@
-<%= form_with model: coffee do |f| %>
+<%= form_with model: [:seller, shop, coffee] do |f| %>
   <div class="row justify-content-center">
     <div class="col-md-10 form-group row">
       <%= f.label :name, class: "col-4" %>
@@ -10,39 +10,39 @@
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :online_sale, class: "col-4" %>
-      <%= f.select :online_sale, options_for_select: [[I18n.t("coffee_posts.show.online_sale.true"), true],[I18n.t("coffee_posts.show.online_sale.false"), false]], class: "col-8 form-control" %>
+      <%= f.select :online_sale, options_for_select: [[I18n.t("seller.coffee_posts.show.online_sale.true"), true],[I18n.t("seller.coffee_posts.show.online_sale.false"), false]], class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :roasting, class: "col-4" %>
-      <%= f.select :roasting, Record.roastings.keys.map {|k| [I18n.t("enums.record.roasting.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :roasting, CoffeePost.roastings.keys.map {|k| [I18n.t("enums.coffee_post.roasting.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :grind_size, class: "col-4" %>
-      <%= f.select :grind_size, Record.grind_sizes.keys.map {|k| [I18n.t("enums.record.grind_size.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :grind_size, CoffeePost.grind_sizes.keys.map {|k| [I18n.t("enums.coffee_post.grind_size.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :brewing, class: "col-4" %>
-      <%= f.select :brewing, Record.brewings.keys.map {|k| [I18n.t("enums.record.brewing.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :brewing, CoffeePost.brewings.keys.map {|k| [I18n.t("enums.coffee_post.brewing.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :sweetness, class: "col-4" %>
-      <%= f.select :sweetness, Record.sweetnesses.keys.map {|k| [I18n.t("enums.record.sweetness.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :sweetness, CoffeePost.sweetnesses.keys.map {|k| [I18n.t("enums.coffee_post.sweetness.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :acidity, class: "col-4" %>
-      <%= f.select :acidity, Record.acidities.keys.map {|k| [I18n.t("enums.record.acidity.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :acidity, CoffeePost.acidities.keys.map {|k| [I18n.t("enums.coffee_post.acidity.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :bitterness, class: "col-4" %>
-      <%= f.select :bitterness, Record.bitternesses.keys.map {|k| [I18n.t("enums.record.bitterness.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :bitterness, CoffeePost.bitternesses.keys.map {|k| [I18n.t("enums.coffee_post.bitterness.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :strength, class: "col-4" %>
-      <%= f.select :strength, Record.strengths.keys.map {|k| [I18n.t("enums.record.strength.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :strength, CoffeePost.strengths.keys.map {|k| [I18n.t("enums.coffee_post.strength.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :aftertaste, class: "col-4" %>
-      <%= f.select :aftertaste, Record.aftertastes.keys.map {|k| [I18n.t("enums.record.aftertaste.#{k}"), k]}, class: "col-8 form-control" %>
+      <%= f.select :aftertaste, CoffeePost.aftertastes.keys.map {|k| [I18n.t("enums.coffee_post.aftertaste.#{k}"), k]}, class: "col-8 form-control" %>
     </div>
     <div class="col-md-10 form-group row">
       <%= f.label :supplement, class: "col-md-4 col-12" %>
