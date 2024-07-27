@@ -1,6 +1,6 @@
 <div class="link-navi">
-  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path(maker_id: current_maker.id) %><span> ＞</span>
-  <%= link_to I18n.t("seller.shops.show.title"), seller_shop_path(maker_id: current_maker.id, id: @shop.id) %><span> ＞</span>
+  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path %><span> ＞</span>
+  <%= link_to I18n.t("seller.shops.show.title"), seller_shop_path(@shop.id) %><span> ＞</span>
   <%= I18n.t("seller.coffee_posts.show.title") %>
 </div>
 

@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-around flex-wrap">
   <% if informations.any? %>
     <% informations.each do |information| %>
-      <%= link_to seller_shop_information_post_path(information.shop_id, information.id), class:"index-card" do %>
+      <%= link_to seller_shop_information_post_path(information.shop_id, information.id), class: "index-card" do %>
         <p class="overflow-hidden text-nowrap text-truncate">
           <%= information.title %>
         </p>

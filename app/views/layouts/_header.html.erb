@@ -11,7 +11,8 @@
       <% end %>
     </li>
     <li>
-      <%= link_to destroy_user_session_path(user_id: current_user.id), method: :delete do %>
+      <%= link_to destroy_user_session_path(user_id: current_user.id), method: :delete,
+          "data-confirm" => I18n.t("logout_confirmation") do %>
         <i class="fa-solid fa-right-from-bracket"></i>
       <% end %>
     </li>
@@ -22,7 +23,8 @@
       <% end %>
     </li>
     <li>
-      <%= link_to destroy_maker_session_path(maker_id: current_maker.id), method: :delete do %>
+      <%= link_to destroy_maker_session_path(maker_id: current_maker.id), method: :delete,
+          "data-confirm" => I18n.t("logout_confirmation") do %>
         <i class="fa-solid fa-right-from-bracket"></i>
       <% end %>
     </li>

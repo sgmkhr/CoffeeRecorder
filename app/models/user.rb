@@ -25,34 +25,34 @@ class User < ApplicationRecord
       when "excellent" then
         [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
           n = record.read_attribute_before_type_cast(attribute)
-          sweetness.push(n, n, n)  if attribute == :sweetness
-          acidity.push(n, n, n)    if attribute == :acidity
-          bitterness.push(n, n, n) if attribute == :bitterness
-          strength.push(n, n, n)   if attribute == :strength
-          aftertaste.push(n, n, n) if attribute == :aftertaste
+          sweetness.push(n, n, n)  if attribute == :sweetness && n != 0
+          acidity.push(n, n, n)    if attribute == :acidity && n != 0
+          bitterness.push(n, n, n) if attribute == :bitterness && n != 0
+          strength.push(n, n, n)   if attribute == :strength && n != 0
+          aftertaste.push(n, n, n) if attribute == :aftertaste && n != 0
         end
       when "very_good" then
         [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
           n = record.read_attribute_before_type_cast(attribute)
-          sweetness.push(n, n)  if attribute == :sweetness
-          acidity.push(n, n)    if attribute == :acidity
-          bitterness.push(n, n) if attribute == :bitterness
-          strength.push(n, n)   if attribute == :strength
-          aftertaste.push(n, n) if attribute == :aftertaste
+          sweetness.push(n, n)  if attribute == :sweetness && n != 0
+          acidity.push(n, n)    if attribute == :acidity && n != 0
+          bitterness.push(n, n) if attribute == :bitterness && n != 0
+          strength.push(n, n)   if attribute == :strength && n != 0
+          aftertaste.push(n, n) if attribute == :aftertaste && n != 0
         end
       when "good" then
         [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
           n = record.read_attribute_before_type_cast(attribute)
-          sweetness.push(n)  if attribute == :sweetness
-          acidity.push(n)    if attribute == :acidity
-          bitterness.push(n) if attribute == :bitterness
-          strength.push(n)   if attribute == :strength
-          aftertaste.push(n) if attribute == :aftertaste
+          sweetness.push(n)  if attribute == :sweetness && n != 0
+          acidity.push(n)    if attribute == :acidity && n != 0
+          bitterness.push(n) if attribute == :bitterness && n != 0
+          strength.push(n)   if attribute == :strength && n != 0
+          aftertaste.push(n) if attribute == :aftertaste && n != 0
         end
       end
     end
     [sweetness, acidity, bitterness, strength, aftertaste].map do |data|
-      (data.sum / data.length).round
+      (data.sum / data.length).round if data.present?
     end
   end
 

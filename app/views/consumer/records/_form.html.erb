@@ -2,7 +2,7 @@
   <%= render "layouts/errors", obj: record %>
 </div>
 
-<%= form_with model: record, url: user_records_path(current_user.id), method: :post do |f| %>
+<%= form_with model: [current_user, record] do |f| %>
   <div class="row justify-content-center">
     <div class="col-md-10 form-group row">
       <%= f.label :coffee_name, class: "col-md-4 col-12" %>
@@ -55,7 +55,7 @@
   </div>
   <div class="row">
     <div class="actions col-md-10 text-right">
-      <%= f.submit I18n.t("btn.create"), class: "btn btn-sm common-btn" %>
+      <%= f.submit btn_name, class: "btn btn-sm common-btn" %>
     </div>
   </div>
 <% end %>

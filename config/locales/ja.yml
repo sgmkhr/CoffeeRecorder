@@ -12,6 +12,7 @@ ja:
     maker_login: 販売者はこちら
     user_login: 一般の方はこちら
   minimum_password: 6文字以上
+  logout_confirmation: 本当にログアウトしてよろしいですか？
   seller:
     guest_login:
       notice: 販売者ゲストユーザーとしてログインしました
@@ -136,6 +137,7 @@ ja:
       index:
         title: ショップ一覧
         no_exist: ショップはありません。
+        link: ショップを探しにいく
       show:
         title: ショップ詳細
 

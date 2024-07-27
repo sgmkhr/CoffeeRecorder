@@ -1,7 +1,7 @@
 <div class="main-container">
   <div class="text-center d-flex">
     <h4 class="mr-2"><%= current_maker.company_name %></h4>
-    <%= link_to seller_edit_maker_path(current_maker.id) do %>
+    <%= link_to seller_edit_maker_path do %>
       <i class="fa-solid fa-gears"></i>
     <% end %>
   </div>
@@ -9,7 +9,7 @@
   <div class="errors">
     <%= render "layouts/errors", obj: @shop %>
   </div>
-  <%= form_with model: @shop, url: seller_shops_path(id: current_maker.id), method: :post do |f| %>
+  <%= form_with model: @shop, url: seller_shops_path, method: :post do |f| %>
     <div class="d-flex justify-content-center justify-content-md-end">
       <div class="row form-group col-md-7">
         <%= f.text_field :name, placeholder: I18n.t("seller.shops.create.placeholder"), class: "form-control col-8" %>
@@ -26,11 +26,15 @@
       <% @shops.each do |shop| %>
         <%= link_to seller_shop_path(shop.id) do %>
           <div class="shop-card">
-            <%= image_tag shop.get_shop_image(50, 50) %>
-            <p><%= shop.name %></p>
-            <%= link_to edit_seller_shop_path(shop.id) do %>
-              <i class="fa-solid fa-gear"></i>
-            <% end %>
+            <%= image_tag shop.get_shop_image(200, 200) %>
+            <div class="d-flex">
+              <%= link_to edit_seller_shop_path(shop.id) do %>
+                <i class="fa-solid fa-gear"></i>
+              <% end %>
+              <p class="mb-0 ml-1 overflow-hidden text-nowrap text-truncate">
+                <%= shop.name %>
+              </p>
+            </div>
           </div>
         <% end %>
       <% end %>

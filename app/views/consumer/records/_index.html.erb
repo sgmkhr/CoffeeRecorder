@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-around flex-wrap">
   <% if records.any? %>
     <% records.each do |record| %>
-      <%= link_to user_record_path(current_user.id, record.id), class:"index-card" do %>
+      <%= link_to user_record_path(current_user.id, record.id), class: "index-card" do %>
         <p class="overflow-hidden text-nowrap text-truncate">
           <i class="fa-solid fa-tablets"></i> <%= record.coffee_name %>
         </p>

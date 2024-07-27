@@ -1,6 +1,6 @@
 <div class="link-navi">
-  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path(maker_id: current_maker.id) %><span> ＞</span>
-  <%= link_to I18n.t("seller.shops.show.title"), seller_shop_path(maker_id: current_maker.id, id: @shop.id) %><span> ＞</span>
+  <%= link_to I18n.t("seller.shops.index.title"), seller_shops_path %><span> ＞</span>
+  <%= link_to I18n.t("seller.shops.show.title"), seller_shop_path(@shop.id) %><span> ＞</span>
   <%= I18n.t("seller.information_posts.show.title") %>
 </div>
 
@@ -18,7 +18,7 @@
       <p><%= @information.body %></p>
     </div>
     <div class="text-right">
-      <%= link_to I18n.t("btn.edit"), edit_seller_shop_information_post_path(maker_id: current_maker.id, @shop.id, @information.id), class: "btn border rounded" %>
+      <%= link_to I18n.t("btn.edit"), edit_seller_shop_information_post_path(@shop.id, @information.id), class: "btn border rounded" %>
     </div>
   </div>
 </div>

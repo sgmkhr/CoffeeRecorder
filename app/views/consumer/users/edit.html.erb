@@ -10,7 +10,7 @@
       <div class="col-md-8 text-right">
         <%= f.submit I18n.t("btn.update"), class: "btn btn-sm common-btn" %></br></br>
         <%= link_to I18n.t("consumer.users.destroy.btn"), user_path(@user.id), method: :delete,
-      class: "mt-3", "data-confirmation" => I18n.t("consumer.users.destroy.confirmation") %>
+            class: "mt-3", "data-confirm" => I18n.t("consumer.users.destroy.confirmation") %>
       </div>
     </div>
   <% end %>

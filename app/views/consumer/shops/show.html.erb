@@ -7,11 +7,13 @@
 <div class="main-container">
   <div class="row">
     <div class="col-md-6">
-      <div>
-        <%= image_tag @shop.get_shop_image(300, 300) %>
+      <div class="mb-3 d-flex justify-content-center">
+        <%= image_tag @shop.get_shop_image(300, 300), class: "d-md-block d-sm-none d-none" %>
+        <%= image_tag @shop.get_shop_image(270, 270), class: "d-md-none d-sm-block d-none" %>
+        <%= image_tag @shop.get_shop_image(240, 240), class: "d-md-none" %>
       </div>
     </div>
-    <div class="col-md-6 mt-md-3">
+    <div class="col-md-6">
       <ul id="tab-menu-in-shop" class="d-flex justify-content-between">
         <li><a href="#coffee_posts_tab" class="active-index"><i class="fa-solid fa-mug-saucer"></i></a></li>
         <li><a href="#information_posts_tab" class=""><i class="fa-solid fa-circle-info"></i></a></li>
