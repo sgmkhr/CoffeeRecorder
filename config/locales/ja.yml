@@ -3,6 +3,7 @@ ja:
     update: 更新
     create: 作成
     edit: 編集
+    delete: 削除
     sign_up: 新規登録
     log_in: ログイン
     guest_login: ゲストユーザーとしてログイン
@@ -54,6 +55,7 @@ ja:
         alert: コーヒー情報の更新に失敗しました。
       destroy:
         notice: コーヒーを削除しました。
+        confirmation: 本当に削除してよろしいですか？
       reject:
         alert: 他店舗のコーヒーデータは扱えません。
       show:
@@ -64,7 +66,7 @@ ja:
       new:
         title: コーヒー新規投稿
       edit:
-        title: コーチー投稿内容編集
+        title: コーヒー投稿内容編集
     information_posts:
       create:
         notice: 新しいお知らせを作成しました。
@@ -74,12 +76,15 @@ ja:
         alert: お知らせ情報の更新に失敗しました。
       destroy:
         notice: お知らせを削除しました。
+        confirmation: 本当に削除してよろしいですか？
       reject:
         alert: 他店舗のお知らせデータは扱えません。
       new:
         title: お知らせ新規投稿
       edit:
         title: お知らせ投稿編集
+      show:
+        title: お知らせ投稿詳細
   consumer:
     guest_login:
       notice: 消費者ゲストユーザーとしてログインしました
@@ -110,6 +115,7 @@ ja:
         alert: 記録情報の更新に失敗しました。
       destroy:
         notice: 記録を削除しました。
+        confirmation: 本当に削除してよろしいですか？
       index:
         title: 記録一覧
         no_exist: 記録はありません。

@@ -6,5 +6,11 @@
 </div>
 
 <div class="main-container">
+  <div class="row my-1">
+    <div class="actions col-md-11 text-right">
+      <%= link_to I18n.t("btn.delete"), seller_shop_coffee_post_path(@shop.id, @coffee.id), method: :delete, "data-confirm" => I18n.t("seller.coffee_posts.destroy.confirmation"), class: "btn btn-sm btn-secondary p-0" %>
+    </div>
+  </div>
+  
   <%= render "seller/coffee_posts/form", coffee: @coffee, shop: @shop, btn_name: I18n.t("btn.update") %>
 </div>

@@ -5,7 +5,7 @@
 </div>
 
 <div class="main-container">
-  <div class="errors">
+  <div class="errors text-center">
     <%= render "layouts/errors", obj: @shop %>
   </div>
   <%= form_with model: @shop, url: seller_shop_path(@shop.id), method: :patch do |f| %>

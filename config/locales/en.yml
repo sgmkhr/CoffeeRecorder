@@ -35,6 +35,7 @@ en:
     update: Update
     create: Create
     edit: Edit
+    delete: Delete
     sign_up: Sign up
     log_in: Log in
     guest_login: login as guest user
@@ -86,6 +87,7 @@ en:
         alert: Update failed.
       destroy:
         notice: The coffee has been deleted.
+        confirmation: Are you sure that you want to delete this record?
       reject:
         alert: You cannot edit other shops' data.
       show:
@@ -106,12 +108,15 @@ en:
         alert: Update failed.
       destroy:
         notice: The information post has been deleted.
+        confirmation: Are you sure that you want to delete this record?
       reject:
         alert: You cannot edit other shops' data.
       new:
         title: New information from shop
       edit:
         title: Information post editing page
+      show:
+        title: Information post details
   consumer:
     guest_login:
       notice: You logged in as a guest user of consumers.
@@ -142,6 +147,7 @@ en:
         alert: Update failed.
       destroy:
         notice: The record has been deleted.
+        confirmation: Are you sure that you want to delete this record?
       index:
         title: Records list
         no_exist: "No record exists yet."

@@ -5,5 +5,11 @@
 </div>
 
 <div class="main-container">
+  <div class="row my-1">
+    <div class="actions col-md-11 text-right">
+      <%= link_to I18n.t("btn.delete"), user_record_path(current_user.id, @record.id), method: :delete, "data-confirm" => I18n.t("consumer.records.destroy.confirmation"), class: "btn btn-sm btn-secondary p-0" %>
+    </div>
+  </div>
+  
   <%= render "consumer/records/form", record: @record, btn_name: I18n.t("btn.update") %>
 </div>

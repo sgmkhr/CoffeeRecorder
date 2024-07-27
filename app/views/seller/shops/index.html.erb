@@ -23,24 +23,27 @@
   <section>
     <h5><%= I18n.t("seller.shops.index.section_title") %></h5>
     <% if @shops.any? %>
-      <% @shops.each do |shop| %>
-        <%= link_to seller_shop_path(shop.id) do %>
-          <div class="shop-card">
-            <%= image_tag shop.get_shop_image(200, 200) %>
-            <div class="d-flex">
-              <%= link_to edit_seller_shop_path(shop.id) do %>
-                <i class="fa-solid fa-gear"></i>
-              <% end %>
-              <p class="mb-0 ml-1 overflow-hidden text-nowrap text-truncate">
-                <%= shop.name %>
-              </p>
+      <div class="d-flex">
+        <% @shops.each do |shop| %>
+          <%= link_to seller_shop_path(shop.id) do %>
+            <div class="shop-card m-1">
+              <%= image_tag shop.get_shop_image(200, 200) %>
+              <div class="d-flex">
+                <%= link_to edit_seller_shop_path(shop.id) do %>
+                  <i class="fa-solid fa-gear"></i>
+                <% end %>
+                <p class="mb-0 ml-1 overflow-hidden text-nowrap text-truncate">
+                  <%= shop.name %>
+                </p>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
       <div class="text-center">
         <%= paginate @shops, theme: "bootstrap-5" %>
       </div>
+      
     <% else %>
       <p class="text-center"><%= I18n.t("seller.shops.index.no_exist") %></p>
     <% end %>
