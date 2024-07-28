@@ -63,6 +63,7 @@ ja:
           false: 無
           true: 有
         title: コーヒー投稿詳細
+        chart_label: 味わいチャート
       new:
         title: コーヒー新規投稿
       edit:
@@ -134,6 +135,7 @@ ja:
         online_sale:
           true: 有
           false: 無
+        chart_label: 味わいチャート
     information_posts:
       index:
         no_exist: お知らせ投稿はありません。

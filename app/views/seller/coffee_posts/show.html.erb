@@ -12,7 +12,11 @@
       <%= image_tag @coffee.get_coffee_image(240, 240), class: "d-md-none" %>
     </div>
     <p class="mb-3"><%= @coffee.introduction %></p>
+    <div id="chart">
+      <%= render "seller/coffee_posts/chart", coffee_data: @coffee_data, coffee: @coffee %>
+    </div>
   </div>
+  
   <div class="col-md-6">
     <p>
       <i class="fa-solid fa-tablets"></i><%= @coffee.name %>

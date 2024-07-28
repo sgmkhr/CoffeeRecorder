@@ -26,4 +26,12 @@ class CoffeePost < ApplicationRecord
     coffee_image.variant(resize_to_limit: [width, height]).processed
   end
 
+  def get_coffee_data
+    n = []
+    [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
+      n << self.read_attribute_before_type_cast(attribute)
+    end
+    return n
+  end
+
 end

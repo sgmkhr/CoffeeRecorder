@@ -95,6 +95,7 @@ en:
           false: available
           true: not available
         title: Coffee post details
+        chart_label: taste's chart
       new:
         title: New coffee
       edit:
@@ -166,6 +167,7 @@ en:
         online_sale:
           true: available
           false: not available
+        chart_label: taste's chart
     information_posts:
       index:
         no_exist: "No information post exists yet."

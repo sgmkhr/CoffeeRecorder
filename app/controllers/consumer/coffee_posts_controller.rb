@@ -6,5 +6,6 @@ class Consumer::CoffeePostsController < ApplicationController
 
   def show
     @coffee = CoffeePost.find(params[:id])
+    @coffee_data = @coffee.get_coffee_data
   end
 end

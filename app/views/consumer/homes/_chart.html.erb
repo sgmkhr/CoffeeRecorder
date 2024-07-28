@@ -24,17 +24,16 @@
           ],
         },
         options: {
-          scale: {
-            pointLabels: {
-              fontColor: "green" //5角形の頂点の名前の色
-            },
+        scales: {
+          r: {
+            min: 0, // 目盛最小値
+            max: 5, // 目盛最大値
             ticks: {
-                min: 1, // 目盛最小値
-                max: 5, // 目盛最大値
                 stepSize: 1, // 目盛間隔
             }
           }
         }
+      }
       });
     });
   </script>
