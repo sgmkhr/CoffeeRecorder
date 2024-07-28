@@ -23,4 +23,12 @@ class Record < ApplicationRecord
     end
     record_image.variant(resize_to_limit: [width, height]).processed
   end
+  
+  def get_record_data
+    n = []
+    [:sweetness, :acidity, :bitterness, :strength, :aftertaste].each do |attribute|
+      n << self.read_attribute_before_type_cast(attribute)
+    end
+    return n
+  end
 end

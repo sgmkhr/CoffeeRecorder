@@ -16,6 +16,7 @@ class Consumer::RecordsController < ApplicationController
   
   def show
     @record = Record.find(params[:id])
+    @record_data = @record.get_record_data
   end
 
   def edit

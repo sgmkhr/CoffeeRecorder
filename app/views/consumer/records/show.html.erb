@@ -11,6 +11,9 @@
       <%= image_tag @record.get_record_image(240, 240), class: "d-md-none" %>
     </div>
     <p class="mb-3"><%= @record.impression %></p>
+    <div id="chart">
+      <%= render "consumer/records/chart", record_data: @record_data, record: @record %>
+    </div>
   </div>
   <div class="col-md-6 mt-md-3">
     <p class="overflow-hidden text-nowrap text-truncate">

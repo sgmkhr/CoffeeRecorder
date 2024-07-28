@@ -1,0 +1,37 @@
+<canvas id="consumerRecordLineChart_<%= record.id %>"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  $(document).on('turbolinks:load', function() {
+    var consumer_record_ctx_<%= record.id %> = document.getElementById("consumerRecordLineChart_<%= record.id %>");
+    var consumerRecordLineChart_<%= record.id %> = new Chart(consumer_record_ctx_<%= record.id %>, {
+      type: 'radar',
+      data: {
+        labels: ["<%= CoffeePost.human_attribute_name(:sweetness) %>",
+                 "<%= CoffeePost.human_attribute_name(:acidity) %>",
+                 "<%= CoffeePost.human_attribute_name(:bitterness) %>",
+                 "<%= CoffeePost.human_attribute_name(:strength) %>",
+                 "<%= CoffeePost.human_attribute_name(:aftertaste) %>"],
+        datasets: [
+          {
+            label: "<%= I18n.t("consumer.coffee_posts.show.chart_label") %>",
+            data: <%= record_data %>,
+            borderColor: "rgba(210, 180, 140, 0.8)",
+            backgroundColor: "rgba(189, 183, 107, 0.5)"
+          }
+        ],
+      },
+      options: {
+        scales: {
+          r: {
+            min: 0, // 目盛最小値
+            max: 5, // 目盛最大値
+            ticks: {
+                stepSize: 1, // 目盛間隔
+            }
+          }
+        }
+      }
+    });
+  });
+</script>
