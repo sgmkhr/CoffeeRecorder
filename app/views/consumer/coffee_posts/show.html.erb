@@ -23,7 +23,9 @@
       <i class="fa-solid fa-tablets"></i><%= @coffee.name %>
     </p>
     <p>
-      <i class="fa-solid fa-store"></i><%= @coffee.shop.name %>
+      <%= link_to shop_path(@coffee.shop_id) do %>
+        <i class="fa-solid fa-store"></i><%= @coffee.shop.name %>
+      <% end %>
     </p>
     <p>
       <%= I18n.t("activerecord.attributes.coffee_post.online_sale") + "：" %>

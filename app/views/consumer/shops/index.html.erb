@@ -5,20 +5,25 @@
 
 <div class="main-container">
   <% if @shops.any? %>
-    <% @shops.each do |shop| %>
-      <%= link_to shop_path(shop.id) do %>
-        <div class="shop-card">
-          <%= image_tag shop.get_shop_image(200, 200) %>
-          <p>
-            <i class="fa-solid fa-store"></i>
-            <%= shop.name %>
-          </p>
-          <p class="overflow-hidden text-nowrap text-truncate">
-            <%= shop.address %>
-          </p>
-        </div>
+    <div class="d-flex">
+      <% @shops.each do |shop| %>
+        <%= link_to shop_path(shop.id) do %>
+          <div class="shop-card m-1">
+            <%= image_tag shop.get_shop_image(200, 200) %>
+            <p class="overflow-hidden text-nowrap text-truncate">
+              <i class="fa-solid fa-store"></i>
+              <%= shop.name %>
+            </p>
+            <p class="overflow-hidden text-nowrap text-truncate">
+              <%= shop.address %>
+            </p>
+            <p class="overflow-hidden text-nowrap text-truncate">
+              <%= shop.introduction %>
+            </p>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
     <p class="text-center">
       <%= paginate @shops, theme: "bootstrap-5" %>
     </p>
