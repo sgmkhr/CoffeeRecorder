@@ -1,6 +1,7 @@
 class Seller::ShopsController < ApplicationController
   before_action :authenticate_maker!
   before_action :ensure_guest_maker, only: [:create, :update, :destroy]
+  before_action :ensure_matching_maker_and_set_shop, except: [:index, :create]
   def index
     @shop = Shop.new
     @shops = current_maker.shops.page(params[:page]).per(20)
@@ -17,17 +18,14 @@ class Seller::ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find(params[:id])
     @coffees = @shop.coffee_posts.page(params[:coffee_page])
     @informations = @shop.information_posts.page(params[:information_page])
   end
 
   def edit
-    @shop = Shop.find(params[:id])
   end
   
   def update
-    @shop = Shop.find(params[:id])
     if @shop.update(shop_params)
       redirect_to seller_shop_path(@shop.id), notice: I18n.t("seller.shops.update.notice")
     else
@@ -37,7 +35,7 @@ class Seller::ShopsController < ApplicationController
   end
   
   def destroy
-    Shop.find(params[:id]).destroy
+    @shop.destroy
     redirect_to seller_shops_path, notice: I18n.t("seller.shops.destroy.notice")
   end
   
@@ -45,5 +43,12 @@ class Seller::ShopsController < ApplicationController
   
   def shop_params
     params.require(:shop).permit(:name, :address, :introduction, :website)
+  end
+  
+  def ensure_matching_maker_and_set_shop
+    @shop = Shop.find(params[:id])
+    if current_maker != @shop.maker
+      redirect_to seller_shops_path, alert: I18n.t("seller.reject_unmatch_maker")
+    end
   end
 end

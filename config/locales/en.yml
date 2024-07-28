@@ -50,6 +50,7 @@ en:
     guest_login:
       notice: You logged in as a guest user of sellers.
       alert: A guest user cannot operate this function. You need to log in or sign up.
+    reject_unmatch_maker: You cannot view or operate other maker's information.
     makers:
       update:
         notice: The information has been updated.
@@ -122,6 +123,7 @@ en:
     guest_login:
       notice: You logged in as a guest user of consumers.
       alert: A guest user cannot operate this function. You need to log in or sign up.
+    reject_unmatch_user: You cannot view or operate other user's information.
     homes:
       title: Top page
       chart_label: Graph of your preferences

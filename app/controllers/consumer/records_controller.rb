@@ -1,6 +1,7 @@
 class Consumer::RecordsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_guest_user, only: [:create, :update, :destroy]
+  before_action :ensure_matching_user_and_set_record, except: [:create]
   def create
     @record = current_user.records.new(record_params)
     if @record.save
@@ -15,16 +16,13 @@ class Consumer::RecordsController < ApplicationController
   end
   
   def show
-    @record = Record.find(params[:id])
     @record_data = @record.get_record_data
   end
 
   def edit
-    @record = Record.find(params[:id])
   end
   
   def update
-    @record = Record.find(params[:id])
     if @record.update(record_params)
       redirect_to user_record_path(current_user, @record.id), notice: I18n.t("consumer.records.update.notice")
     else
@@ -34,7 +32,7 @@ class Consumer::RecordsController < ApplicationController
   end
   
   def destroy
-    Record.find(params[:id]).destroy
+    @record.destroy
     redirect_to root_path(current_tab: "index_tab"), notice: I18n.t("consumer.records.destroy.notice")
   end
   
@@ -43,5 +41,12 @@ class Consumer::RecordsController < ApplicationController
   def record_params
     params.require(:record).permit(:coffee_name, :shop_name, :scene, :brewing, :sweetness,
                                    :acidity, :bitterness, :strength, :aftertaste, :impression, :rate, :record_image)
+  end
+  
+  def ensure_matching_user_and_set_record
+    @record = Record.find(params[:id])
+    if current_user != @record.user
+      redirect_to root_path, alert: I18n.t("consumer.reject_unmatch_user")
+    end
   end
 end
