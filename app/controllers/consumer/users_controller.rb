@@ -11,7 +11,7 @@ class Consumer::UsersController < ApplicationController
       redirect_to root_path, notice: I18n.t("consumer.users.update.notice")
     else
       flash.now[:alert] = I18n.t("consumer.users.update.alert")
-      render edit
+      render :edit
     end
   end
 
