@@ -6,7 +6,7 @@
     <% end %>
   </div>
 
-  <div class="errors">
+  <div class="errors text-center">
     <%= render "layouts/errors", obj: @shop %>
   </div>
   <%= form_with model: @shop, url: seller_shops_path, method: :post do |f| %>

@@ -71,6 +71,7 @@ en:
         alert: Update failed.
       destroy:
         notice: The shop has been deleted.
+        confirmation: Are you sure that you want to destroy all the data with this shop?
       index:
         title: Top page
         section_title: Company shops list

@@ -8,6 +8,13 @@
   <div class="errors text-center">
     <%= render "layouts/errors", obj: @shop %>
   </div>
+  
+  <div class="row my-1">
+    <div class="actions col-md-11 text-right">
+      <%= link_to I18n.t("btn.delete"), seller_shop_path(@shop.id), method: :delete, "data-confirm" => I18n.t("seller.shops.destroy.confirmation"), class: "btn btn-sm btn-secondary p-0" %>
+    </div>
+  </div>
+  
   <%= form_with model: @shop, url: seller_shop_path(@shop.id), method: :patch do |f| %>
     <div class="form-group row justify-content-center">
       <%= f.label :name, class: "col-md-3 col-12" %>

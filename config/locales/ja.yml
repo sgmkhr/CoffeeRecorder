@@ -39,6 +39,7 @@ ja:
         alert: 店舗情報の更新に失敗しました。
       destroy:
         notice: 店舗を削除しました。
+        confirmation: 本当に削除してよろしいですか？店舗に紐づくコーヒーやお知らせも削除されます。
       index:
         title: 販売者トップページ
         section_title: 自社店舗一覧
