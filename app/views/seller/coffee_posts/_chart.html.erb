@@ -3,6 +3,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   $(document).on('turbolinks:load', function() {
+    if (sellerCoffeeLineChart_<%= coffee.id %>) {
+      sellerCoffeeLineChart_<%= coffee.id %>.destroy();
+    }
     var seller_coffee_ctx_<%= coffee.id %> = document.getElementById("sellerCoffeeLineChart_<%= coffee.id %>");
     var sellerCoffeeLineChart_<%= coffee.id %> = new Chart(seller_coffee_ctx_<%= coffee.id %>, {
       type: 'radar',

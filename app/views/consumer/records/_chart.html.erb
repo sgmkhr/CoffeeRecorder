@@ -3,6 +3,9 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   $(document).on('turbolinks:load', function() {
+    if (consumerRecordLineChart_<%= record.id %>) {
+      consumerRecordLineChart_<%= record.id %>.destroy();
+    }
     var consumer_record_ctx_<%= record.id %> = document.getElementById("consumerRecordLineChart_<%= record.id %>");
     var consumerRecordLineChart_<%= record.id %> = new Chart(consumer_record_ctx_<%= record.id %>, {
       type: 'radar',
