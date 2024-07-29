@@ -12,6 +12,7 @@ class Seller::ShopsController < ApplicationController
     if @shop.save
       redirect_to seller_shops_path, notice: I18n.t("seller.shops.create.notice")
     else
+      @shops = current_maker.shops.page(params[:page]).per(20)
       flash.now[:alert] = I18n.t("seller.shops.create.alert")
       render :index
     end
