@@ -18,7 +18,7 @@
     <% end %>
   </div>
 <% end %>
-<div class="text-center">
+<div class="d-flex justify-content-center">
   <% if records.any? %>
     <%= paginate records, theme: "bootstrap-5", params: { current_tab: tab_name } %>
   <% else %>

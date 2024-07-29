@@ -12,7 +12,7 @@
     <% end %>
   <% end %>
 </div>
-<div class="text-center">
+<div class="d-flex justify-content-center">
   <% if informations.any? %>
     <%= paginate informations, theme: "bootstrap-5", :param_name => param_name %>
   <% else %>

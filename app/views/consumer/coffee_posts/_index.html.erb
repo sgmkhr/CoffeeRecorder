@@ -15,7 +15,7 @@
     <% end %>
   <% end %>
 </div>
-<div class="text-center">
+<div class="d-flex justify-content-center">
   <% if coffees.any? %>
     <%= paginate coffees, theme: "bootstrap-5", :param_name => param_name, params: { current_tab: tab_name } %>
   <% else %>

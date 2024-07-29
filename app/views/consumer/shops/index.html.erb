@@ -27,9 +27,9 @@
         <% end %>
       <% end %>
     </div>
-    <p class="text-center">
+    <div class="d-flex justify-content-center">
       <%= paginate @shops, theme: "bootstrap-5" %>
-    </p>
+    </div>
   <% else %>
     <p class="text-center"><%= I18n.t("consumer.shops.index.no_exists") %></p>
   <% end %>
