@@ -133,6 +133,13 @@ nav ul {
   background-color: rgb(233, 228, 212);
 }
 
+.card-image {
+  width:  200px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
 #information_posts_tab {
   display: none;
 }
