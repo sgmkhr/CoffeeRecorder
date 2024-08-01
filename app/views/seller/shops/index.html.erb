@@ -23,24 +23,22 @@
   <section>
     <h5><%= I18n.t("seller.shops.index.section_title") %></h5>
     <% if @shops.any? %>
-      <div class="d-flex">
+      <div class="d-flex justify-content-around flex-wrap">
         <% @shops.each do |shop| %>
-          <%= link_to seller_shop_path(shop.id) do %>
-            <div class="shop-card m-1">
-              <div class="card-image">
-                <%= image_tag shop.get_shop_image(200, 150) %>
-              </div>
-              <hr class="mb-1">
-              <div class="d-flex">
-                <object>
-                  <%= link_to edit_seller_shop_path(shop.id) do %>
-                    <i class="fa-solid fa-gear"></i>
-                  <% end %>
-                </object>
-                <p class="mb-0 ml-1 overflow-hidden text-nowrap text-truncate">
-                  <%= shop.name %>
-                </p>
-              </div>
+          <%= link_to seller_shop_path(shop.id), class: "shop-card" do %>
+            <div class="card-image">
+              <%= image_tag shop.get_shop_image(200, 150) %>
+            </div>
+            <hr class="mb-1">
+            <div class="d-flex">
+              <object>
+                <%= link_to edit_seller_shop_path(shop.id) do %>
+                  <i class="fa-solid fa-gear"></i>
+                <% end %>
+              </object>
+              <p class="mb-0 ml-1 overflow-hidden text-nowrap text-truncate">
+                <%= shop.name %>
+              </p>
             </div>
           <% end %>
         <% end %>

@@ -1,17 +1,17 @@
 <div class="main-container">
-  <h2><%= I18n.t("link.log_in") %>(<%= I18n.t("activerecord.models.maker") %>)</h2>
-  
+  <h4 class="text-center"><%= I18n.t("link.log_in") %></br>(<%= I18n.t("activerecord.models.maker") %>)</h4>
+
   <%= form_with model: @maker, url: maker_session_path do |f| %>
     <div class="form-group row justify-content-center">
       <%= f.label :email, class: "col-md-3" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control col-md-5" %>
     </div>
-  
+
     <div class="form-group row justify-content-center">
       <%= f.label :password, class: "col-md-3" %><br />
       <%= f.password_field :password, autocomplete: "current-password", class: "form-control col-md-5" %>
     </div>
-  
+
     <% if devise_mapping.rememberable? %>
       <div class="row justify-content-center">
         <div class="col-md-8 text-right">
@@ -20,7 +20,7 @@
         </div>
       </div>
     <% end %>
-  
+
     <div class="actions row justify-content-center">
       <div class="col-md-8 text-right">
         <%= f.submit I18n.t("btn.log_in"), class: "btn btn-sm common-btn" %></br>
@@ -31,4 +31,3 @@
     </div>
   <% end %>
 </div>
-  
