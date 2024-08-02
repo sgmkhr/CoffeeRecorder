@@ -1,7 +1,9 @@
 class Consumer::ShopsController < ApplicationController
   before_action :authenticate_user!
   def index
-    @shops = Shop.page(params[:page])
+    @keyword = params[:keyword]
+    @shops = @keyword ? Shop.search_for(@keyword) : Shop.all
+    @shops = @shops.page(params[:page])
   end
 
   def show
