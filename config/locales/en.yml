@@ -39,6 +39,7 @@ en:
     sign_up: Sign up
     log_in: Log in
     guest_login: login as guest user
+    sort: Sort
     search: Search
   link:
     log_in: Log in
@@ -47,6 +48,11 @@ en:
     user_login: For private users
   minimum_password: 6 minimum letters
   logout_confirmation: Are you sure that you want to log out?
+  sort:
+    latest: Newest post order
+    old: Oldest post order
+    high_rate: Highest rate order
+    low_rate: Lowest rate order
   seller:
     guest_login:
       notice: You logged in as a guest user of sellers.

@@ -1,0 +1,11 @@
+<%= form_with url: root_path, method: :get do |f| %>
+  <div class="d-flex justify-content-end">
+    <div class="form-group">
+      <%= f.select :sort, [[I18n.t("sort.latest"), "latest"],[I18n.t("sort.old"), "old"],[I18n.t("sort.high_rate"), "high_rate"],[I18n.t("sort.low_rate"), "low_rate"]], selected: sort, class: "form-control" %>
+    </div>
+    <%= f.hidden_field :current_tab, :value => "index_tab" %>
+    <div class="form-group ml-1">
+      <%= f.submit I18n.t("btn.sort"), class: "btn btn-sm p-0 common-btn" %>
+    </div>
+  </div>
+<% end %>
