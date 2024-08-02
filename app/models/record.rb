@@ -15,6 +15,11 @@ class Record < ApplicationRecord
   enum strength: { unspecified_strength: 0, low: 1, little_low: 2, strength_balanced: 3, little_high: 4, high: 5 }
   enum aftertaste: { unspecified_aftertaste: 0, sharp: 1, clean: 2, aftertaste_balanced: 3, mellow: 4, richness: 5 }
   enum rate: { unspecified_rate: 0, unacceptable: 1, poor: 2, average_rate: 3, good: 4, very_good: 5, excellent: 6 }
+  
+  scope :latest, -> { order(created_at: :desc) }
+  scope :old, -> { order(created_at: :asc) }
+  scope :high_rate, -> { order(rate: :desc) }
+  scope :low_rate, -> { order(rate: :asc) }
 
   def get_record_image(width, height)
     unless record_image.attached?

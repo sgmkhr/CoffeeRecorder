@@ -7,6 +7,7 @@ ja:
     sign_up: 新規登録
     log_in: ログイン
     guest_login: ゲストユーザーとしてログイン
+    sort: 並べ替え
   link:
     log_in: ログイン
     sign_up: 新規登録
@@ -14,6 +15,11 @@ ja:
     user_login: 一般の方はこちら
   minimum_password: 6文字以上
   logout_confirmation: 本当にログアウトしてよろしいですか？
+  sort:
+    latest: 投稿日時の新しい順
+    old: 投稿日時の古い稿順
+    high_rate: 評価の高い順
+    low_rate: 評価の低い順
   seller:
     guest_login:
       notice: 販売者ゲストユーザーとしてログインしました
