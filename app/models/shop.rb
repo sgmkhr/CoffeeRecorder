@@ -18,4 +18,8 @@ class Shop < ApplicationRecord
     end
     shop_image.variant(resize_to_limit: [width, height]).processed
   end
+  
+  def self.search_for(keyword)
+    Shop.where(["name LIKE (?) OR introduction LIKE(?) OR address LIKE(?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
+  end
 end

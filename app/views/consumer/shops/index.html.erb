@@ -4,6 +4,7 @@
 </div>
 
 <div class="main-container">
+  <%= render "consumer/shops/search", keyword: @keyword %>
   <% if @shops.any? %>
     <div class="d-flex justify-content-around flex-wrap">
       <% @shops.each do |shop| %>
@@ -29,6 +30,6 @@
       <%= paginate @shops, theme: "bootstrap-5" %>
     </div>
   <% else %>
-    <p class="text-center"><%= I18n.t("consumer.shops.index.no_exists") %></p>
+    <p class="text-center"><%= I18n.t("consumer.shops.index.no_exist") %></p>
   <% end %>
 </div>

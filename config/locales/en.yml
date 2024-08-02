@@ -40,6 +40,7 @@ en:
     log_in: Log in
     guest_login: login as guest user
     sort: Sort
+    search: Search
   link:
     log_in: Log in
     sign_up: Sign up

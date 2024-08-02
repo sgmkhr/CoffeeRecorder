@@ -1,0 +1,10 @@
+<%= form_with url: shops_path, method: :get do |f| %>
+  <div class="d-flex justify-content-end">
+    <div class="form-group">
+      <%= f.text_field :keyword, :value => keyword, class: "form-control" %>
+    </div>
+    <div class="form-group ml-1 mt-1">
+      <%= f.submit I18n.t("btn.search"), class: "btn btn-sm common-btn" %>
+    </div>
+  </div>
+<% end %>
