@@ -19,9 +19,14 @@
   </div>
   
   <div class="col-md-6">
-    <p>
-      <i class="fa-solid fa-tablets"></i><%= @coffee.name %>
-    </p>
+    <div class="d-flex justify-content-between">
+      <p>
+        <i class="fa-solid fa-tablets"></i><%= @coffee.name %>
+      </p>
+      <div id="bookmark_<%= @coffee.id %>">
+        <%= render "consumer/bookmarks/btn", coffee_post: @coffee %>
+      </div>
+    </div>
     <p>
       <%= link_to shop_path(@coffee.shop_id) do %>
         <i class="fa-solid fa-store"></i><%= @coffee.shop.name %>

@@ -190,6 +190,9 @@ en:
         link: Go to find shops
       show:
         title: shop details
+    bookmarks:
+      index:
+        title: Bookmarked posts
 
   activerecord:
     models:
