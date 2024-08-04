@@ -2,6 +2,11 @@
   <% if coffees.any? %>
     <% coffees.each do |coffee| %>
       <%= link_to shop_coffee_post_path(coffee.shop_id, coffee.id), class:"index-card" do %>
+        <object>
+          <div id="bookmark_<%= coffee.id %>" class="text-right">
+            <%= render "consumer/bookmarks/btn", coffee_post: coffee %>
+          </div>
+        </object>
         <p class="overflow-hidden text-nowrap text-truncate">
           <i class="fa-solid fa-tablets"></i> <%= coffee.name %>
         </p>

@@ -158,6 +158,9 @@ ja:
         link: ショップを探しにいく
       show:
         title: ショップ詳細
+    bookmarks:
+      index:
+        title: ブックマーク一覧
 
   activerecord:
     models:

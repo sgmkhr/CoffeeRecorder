@@ -31,9 +31,12 @@ Rails.application.routes.draw do
       get "users/information/edit", to: "users#edit", as: "edit_user"
       resources :users, only: [:update, :destroy] do
         resources :records, only: [:create, :show, :edit, :update, :destroy]
+        get "bookmarks", to: "bookmarks#index", as: "bookmarks"
       end
       resources :shops, only: [:index, :show] do
-        resources :coffee_posts, only: [:show]
+        resources :coffee_posts, only: [:show] do
+          resource :bookmarks, only: [:create, :destroy]
+        end
         resources :information_posts, only: [:show]
       end
       resources :coffee_posts, only: [:index]
