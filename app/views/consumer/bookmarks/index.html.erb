@@ -1,0 +1,8 @@
+<div class="link-navi">
+  <%= link_to I18n.t("consumer.homes.title"), root_path(current_tab: "main_tab") %><span> ＞</span>
+  <%= I18n.t("consumer.bookmarks.index.title") %>
+</div>
+
+<div class="main-container">
+  <%= render "consumer/coffee_posts/index", coffees: @coffee_posts, param_name: "page", tab_name: "" %>
+</div>

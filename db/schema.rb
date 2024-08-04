@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_11_101310) do
+ActiveRecord::Schema.define(version: 2024_08_04_063716) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,15 @@ ActiveRecord::Schema.define(version: 2024_07_11_101310) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "coffee_post_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["coffee_post_id"], name: "index_bookmarks_on_coffee_post_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
   create_table "coffee_posts", force: :cascade do |t|
@@ -124,6 +133,8 @@ ActiveRecord::Schema.define(version: 2024_07_11_101310) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookmarks", "coffee_posts"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "coffee_posts", "shops"
   add_foreign_key "information_posts", "shops"
   add_foreign_key "records", "users"

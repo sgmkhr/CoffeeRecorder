@@ -1,6 +1,8 @@
 class CoffeePost < ApplicationRecord
   belongs_to :shop
 
+  has_many :bookmarks, dependent: :destroy
+
   has_one_attached :coffee_image
 
   validates :name, presence: true, length: { maximum: 100 }
@@ -32,6 +34,10 @@ class CoffeePost < ApplicationRecord
       n << self.read_attribute_before_type_cast(attribute)
     end
     return n
+  end
+  
+  def bookmarked_by?(user)
+    bookmarks.exists?(user_id: user.id)
   end
 
 end
