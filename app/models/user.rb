@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   has_many :records, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-  
+  has_many :views, dependent: :destroy
+
   has_many :bookmarked_posts, through: :bookmarks, source: :coffee_post
 
   GUEST_USER_EMAIL_AS_USER = "guest_user@example.com"

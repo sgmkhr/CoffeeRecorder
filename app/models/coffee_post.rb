@@ -2,6 +2,7 @@ class CoffeePost < ApplicationRecord
   belongs_to :shop
 
   has_many :bookmarks, dependent: :destroy
+  has_many :views, as: :viewable, dependent: :destroy
 
   has_one_attached :coffee_image
 

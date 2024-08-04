@@ -1,5 +1,7 @@
 class InformationPost < ApplicationRecord
   belongs_to :shop
+  
+  has_many :views, as: :viewable, dependent: :destroy
 
   has_one_attached :information_image
 

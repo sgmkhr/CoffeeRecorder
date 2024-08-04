@@ -49,6 +49,9 @@
     <p><%= I18n.t("activerecord.attributes.coffee_post.strength") + "：" + @coffee.strength_i18n %></p>
     <p><%= I18n.t("activerecord.attributes.coffee_post.aftertaste") + "：" + @coffee.aftertaste_i18n %></p>
     <p><%= @coffee.supplement %></p>
+    <div class="text-right">
+      <%= render "partials/view_count", viewed_post: @coffee %>
+    </div>
   </div>
   
 </div>

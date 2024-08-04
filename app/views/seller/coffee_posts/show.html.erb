@@ -41,6 +41,9 @@
       <p><%= @coffee.supplement %></p>
     </div>
     <div class="text-right">
+      <span class="mr-1">
+        <%= render "partials/view_count", viewed_post: @coffee %>
+      </span>
       <%= link_to I18n.t("btn.edit"), edit_seller_shop_coffee_post_path(@shop.id, @coffee.id), class: "btn border rounded" %>
     </div>
   </div>
