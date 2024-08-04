@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_04_063716) do
+ActiveRecord::Schema.define(version: 2024_08_04_081023) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -131,6 +131,16 @@ ActiveRecord::Schema.define(version: 2024_08_04_063716) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "views", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "viewable_type", null: false
+    t.integer "viewable_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_views_on_user_id"
+    t.index ["viewable_type", "viewable_id"], name: "index_views_on_viewable"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookmarks", "coffee_posts"
@@ -139,4 +149,5 @@ ActiveRecord::Schema.define(version: 2024_08_04_063716) do
   add_foreign_key "information_posts", "shops"
   add_foreign_key "records", "users"
   add_foreign_key "shops", "makers"
+  add_foreign_key "views", "users"
 end

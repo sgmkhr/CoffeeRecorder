@@ -23,6 +23,9 @@
     <p>
       <%= @information.body %>
     </p>
+    <div class="text-right">
+      <%= render "partials/view_count", viewed_post: @information %>
+    </div>
   </div>
 </div>
 
