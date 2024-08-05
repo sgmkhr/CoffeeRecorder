@@ -16,6 +16,9 @@
         <p><%= @shop.address %></p>
         <p><%= @shop.introduction %></p>
         <a href="<%= @shop.website %>" target="_blank"><p><%= @shop.website %></p></a>
+        <div id="shop_<%= @shop.id %>">
+          <%= render "consumer/follows/btn", shop: @shop %>
+        </div>
       </div>
     </div>
     

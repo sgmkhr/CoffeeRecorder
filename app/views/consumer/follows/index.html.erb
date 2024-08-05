@@ -1,9 +1,8 @@
 <div class="link-navi">
   <%= link_to I18n.t("consumer.homes.title"), root_path %><span> ＞</span>
-  <%= I18n.t("consumer.shops.index.title") %>
+  <%= I18n.t("consumer.follows.index.title") %>
 </div>
 
 <div class="main-container">
-  <%= render "consumer/shops/search", keyword: @keyword %>
   <%= render "consumer/shops/index", shops: @shops %>
 </div>

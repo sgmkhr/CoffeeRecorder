@@ -1,0 +1,2 @@
+module Consumer::FollowsHelper
+end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_08_04_081023) do
+ActiveRecord::Schema.define(version: 2024_08_05_081529) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -66,6 +66,15 @@ ActiveRecord::Schema.define(version: 2024_08_04_081023) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["shop_id"], name: "index_coffee_posts_on_shop_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "shop_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shop_id"], name: "index_follows_on_shop_id"
+    t.index ["user_id"], name: "index_follows_on_user_id"
   end
 
   create_table "information_posts", force: :cascade do |t|
@@ -146,6 +155,8 @@ ActiveRecord::Schema.define(version: 2024_08_04_081023) do
   add_foreign_key "bookmarks", "coffee_posts"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "coffee_posts", "shops"
+  add_foreign_key "follows", "shops"
+  add_foreign_key "follows", "users"
   add_foreign_key "information_posts", "shops"
   add_foreign_key "records", "users"
   add_foreign_key "shops", "makers"

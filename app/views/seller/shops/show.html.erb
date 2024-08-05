@@ -12,18 +12,22 @@
     </div>
     <div class="d-flex justify-content-between">
       <h4><%= @shop.name %></h4>
-      <%= link_to edit_seller_shop_path(id: @shop.id) do %>
-        <i class="fa-solid fa-gear"></i>
-      <% end %>
+      <div class="d-flex">
+        <i class="fa-solid fa-user-plus"></i>
+        <%= @shop.followers.count %>
+        <%= link_to edit_seller_shop_path(id: @shop.id), class: "ml-2" do %>
+          <i class="fa-solid fa-gear"></i>
+        <% end %>
+      </div>
     </div>
-    
+
     <div>
       <p><%= @shop.address %></p>
       <p><%= @shop.introduction %></p>
       <a href="<%= @shop.website %>" target="_blank"><p><%= @shop.website %></p></a>
     </div>
   </div>
-    
+
   <div class="col-md-6">
     <div class="border border-secondary rounded p-1 mb-2">
       <div class="text-right">
@@ -33,7 +37,7 @@
       </div>
       <%= render "seller/coffee_posts/index", coffees: @coffees, param_name: "coffee_page" %>
     </div>
-      
+
     <div class="border border-secondary rounded p-1">
       <div class="text-right">
         <%= link_to new_seller_shop_information_post_path(@shop.id) do %>

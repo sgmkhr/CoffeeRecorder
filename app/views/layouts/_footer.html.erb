@@ -12,6 +12,16 @@
       <% end %>
     </li>
     <li>
+      <%= link_to user_bookmarks_path(current_user.id) do %>
+        <i class="fa-solid fa-bookmark"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to user_following_shops_path(current_user.id) do %>
+        <i class="fa-solid fa-store"></i>
+      <% end %>
+    </li>
+    <li>
       <%= link_to destroy_user_session_path(user_id: current_user.id), method: :delete,
           "data-confirm" => I18n.t("logout_confirmation") do %>
         <i class="fa-solid fa-right-from-bracket"></i>
