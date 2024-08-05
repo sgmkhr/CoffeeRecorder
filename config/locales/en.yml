@@ -193,6 +193,12 @@ en:
     bookmarks:
       index:
         title: Bookmarked posts
+    follows:
+      index:
+        title: Shops you're following
+      btn:
+        follow: Follow
+        unfollow: Following
 
   activerecord:
     models:

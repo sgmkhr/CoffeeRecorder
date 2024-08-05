@@ -161,6 +161,12 @@ ja:
     bookmarks:
       index:
         title: ブックマーク一覧
+    follows:
+      index:
+        title: フォロー中ショップ一覧
+      btn:
+        follow: フォローする
+        unfollow: フォロー中
 
   activerecord:
     models:

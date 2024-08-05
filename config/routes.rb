@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   scope "(:locale)" do
     devise_for :makers, skip: [:passwords], controllers: {
       registrations: 'seller/registrations',
@@ -32,12 +33,14 @@ Rails.application.routes.draw do
       resources :users, only: [:update, :destroy] do
         resources :records, only: [:create, :show, :edit, :update, :destroy]
         get "bookmarks", to: "bookmarks#index", as: "bookmarks"
+        get "following_shops", to: "follows#index", as: "following_shops"
       end
       resources :shops, only: [:index, :show] do
         resources :coffee_posts, only: [:show] do
           resource :bookmarks, only: [:create, :destroy]
         end
         resources :information_posts, only: [:show]
+        resource :follows, only: [:create, :destroy]
       end
       resources :coffee_posts, only: [:index]
     end

@@ -17,6 +17,16 @@
         <i class="fa-solid fa-right-from-bracket"></i>
       <% end %>
     </li>
+    <li>
+      <%= link_to user_bookmarks_path(current_user.id) do %>
+        <i class="fa-solid fa-bookmark"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to user_following_shops_path(current_user.id) do %>
+        <i class="fa-solid fa-store"></i>
+      <% end %>
+    </li>
   <% elsif maker_signed_in? %>
     <li>
       <%= link_to seller_shops_path do %>

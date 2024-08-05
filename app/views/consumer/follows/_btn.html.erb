@@ -1,0 +1,5 @@
+<% if current_user.following?(shop) %>
+  <%= link_to I18n.t("consumer.follows.btn.unfollow"), shop_follows_path(shop.id), method: :delete, class: "btn btn-sm unfollow-btn" %>
+<% else %>
+  <%= link_to I18n.t("consumer.follows.btn.follow"), shop_follows_path(shop.id), method: :post, class: "btn btn-sm follow-btn" %>
+<% end %>

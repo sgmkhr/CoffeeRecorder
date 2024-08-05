@@ -3,6 +3,7 @@ class Shop < ApplicationRecord
 
   has_many :coffee_posts, dependent: :destroy
   has_many :information_posts, dependent: :destroy
+  has_many :follows, dependent: :destroy
 
   has_one_attached :shop_image
 
@@ -18,7 +19,7 @@ class Shop < ApplicationRecord
     end
     shop_image.variant(resize_to_limit: [width, height]).processed
   end
-  
+
   def self.search_for(keyword)
     Shop.where(["name LIKE (?) OR introduction LIKE(?) OR address LIKE(?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
   end

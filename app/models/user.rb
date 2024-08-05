@@ -7,8 +7,10 @@ class User < ApplicationRecord
   has_many :records, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :views, dependent: :destroy
+  has_many :follows, dependent: :destroy
 
   has_many :bookmarked_posts, through: :bookmarks, source: :coffee_post
+  has_many :followed_shops, through: :follows, source: :shop
 
   GUEST_USER_EMAIL_AS_USER = "guest_user@example.com"
 
@@ -63,5 +65,9 @@ class User < ApplicationRecord
   def get_matching_coffee_posts
     sweetness, acidity, bitterness, strength, aftertaste = self.get_coffee_preference_data_array
     CoffeePost.where(sweetness: sweetness, acidity: acidity, bitterness: bitterness, strength: strength, aftertaste: aftertaste)
+  end
+  
+  def following?(shop)
+    followed_shops.include?(shop)
   end
 end
