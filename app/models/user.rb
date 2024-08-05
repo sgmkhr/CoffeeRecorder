@@ -66,8 +66,5 @@ class User < ApplicationRecord
     sweetness, acidity, bitterness, strength, aftertaste = self.get_coffee_preference_data_array
     CoffeePost.where(sweetness: sweetness, acidity: acidity, bitterness: bitterness, strength: strength, aftertaste: aftertaste)
   end
-  
-  def following?(shop)
-    followed_shops.include?(shop)
-  end
+
 end

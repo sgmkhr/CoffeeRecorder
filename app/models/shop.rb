@@ -4,6 +4,8 @@ class Shop < ApplicationRecord
   has_many :coffee_posts, dependent: :destroy
   has_many :information_posts, dependent: :destroy
   has_many :follows, dependent: :destroy
+  
+  has_many :followers, through: :follows, source: :user
 
   has_one_attached :shop_image
 
@@ -22,5 +24,9 @@ class Shop < ApplicationRecord
 
   def self.search_for(keyword)
     Shop.where(["name LIKE (?) OR introduction LIKE(?) OR address LIKE(?)", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%"])
+  end
+  
+  def followed_by?(user)
+    followers.include?(user)
   end
 end
